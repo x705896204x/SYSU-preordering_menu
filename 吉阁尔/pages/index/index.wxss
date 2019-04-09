@@ -1,0 +1,53 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color:#237346;
+  
+}
+
+.usermotto {
+ font-family: sans-serif;
+ font-size: 20px;
+}
+.gongneng{
+  column-count: 2;
+}
+button{
+ background-color:#237346;
+ color:azure;
+ height:80px;
+ width: 100px;
+font-size: 15px;
+
+}
+#reserve{
+ 
+  padding: 20px;
+  margin-bottom: 10px;
+  
+}
+#scan{
+  
+  padding: 20px;
+  
+}
+#contact{
+  padding: 20px;
+  margin-bottom: 10px;
+}
+#analyse{
+ padding: 20px;
+}
