@@ -17,9 +17,9 @@
 - DevOps：肖著成
 
 ## Important Documentation
-- [需求规格说明书](https://preorderingmenugroup.github.io/SYSU-preordering_menu/Requirement-specification)
--[软件设计说明书]()
--[产品演示视频]()
+- [需求规格说明书](https://preorderingmenugroup.github.io/SYSU-preordering_menu/Requirement-specification)  
+-[软件设计说明书]()  
+-[产品演示视频]()  
 
 ## Iterations
 
