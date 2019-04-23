@@ -1,9 +1,9 @@
 # SYSU-preordering_menu
-- 1、[About]()（项目概况)  
+- 1、[About](https://preorderingmenugroup.github.io/SYSU-preordering_menu/About)（项目概况)  
 
-- 2、[Team profile]()（团队组建与分工）  
+- 2、[Team profile](https://preorderingmenugroup.github.io/SYSU-preordering_menu/Team)（团队组建与分工）  
 
-- 3、[Investigation]()（项目前期调研/竞品分析）  
+- 3、[Investigation](https://preorderingmenugroup.github.io/SYSU-preordering_menu/Investagation)（项目前期调研/竞品分析）  
 
 - 4、[Vision]()（项目愿景）  
 
