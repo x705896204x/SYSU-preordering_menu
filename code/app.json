@@ -4,6 +4,9 @@
     "pages/aboutUs/aboutUs",
     "pages/enterTips/enterTips",
     "pages/fullyUserInfo/fullyUserInfo"
+    "pages/auth/auth",
+    "pages/logs/logs",
+    "pages/user_create/user_create"
   ],
   "window": {
     "backgroundTextStyle": "light",
