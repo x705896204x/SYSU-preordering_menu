@@ -1,0 +1,31 @@
+<!--pages/aboutUs/aboutUs.wxml-->
+<!--关于我们 页面 by 吴成文-->
+<view class="container">
+  <view class="logo">
+    <image src="../../images/aboutUs/OLcanteen.jpg" class="logo-img"></image>
+    <view class="logo-text">食在大学</view>               <view class="version">v1.0.0</view>          
+  </view>
+
+  <view class="list">
+    <view class="list-item">
+      <text>/提前订餐，避免排队/</text>
+      <text>我们专注于做最好的订餐系统</text>
+      <text>为您节省更多时间，助你成才</text>
+    </view>
+
+    <view class="list-item">
+      <text>/口味分析，吃的开心/</text>
+      <text>做您的饮食保姆，为您快乐进餐而奋斗</text>
+      <text>让您健康生活</text>
+    </view>
+  </view>
+
+  <view class="bless">
+    <text>食在大学，助您订餐，为您省时。</text>
+    <text>期待您的成才！</text>
+  </view>
+
+  <view class="contact-us">
+   <text>联系我们：020-8888 8888</text>
+  </view>
+</view>

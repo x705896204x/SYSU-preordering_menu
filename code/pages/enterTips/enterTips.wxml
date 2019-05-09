@@ -1,0 +1,80 @@
+<!--pages/enterTips/enterTips.wxml-->
+<!--商家入驻，创建店铺之前的提示页面 by 吴成文-->
+<view class="container">
+  <view class="title">
+    <image src="../../images/enterTips/tip.png" class="tip-img"></image>
+    <text>开店前请准备好以下图片资料</text>
+  </view>
+
+  <view class="list">
+    <view class="list-item">
+      <view class="list-item-left">
+        <view class="list-item-left-top">
+          <view class="list-order">1</view>
+          <text>门面图照片</text>
+        </view>
+        <view class="list-item-left-bottom">需拍出完整牌匾、门框</view>
+      </view>
+      <image class="img" src="../../images/enterTips/yifan.jpg"></image>
+    </view>
+
+    <view class="list-item">
+     <view class="list-item-left">
+        <view class="list-item-left-top">
+          <view class="list-order">2</view>
+          <text>店内环境照片</text>
+        </view>
+        <view class="list-item-left-bottom">需真实反映用餐环境（收银台、用餐桌椅等）</view>
+      </view>
+      <image class="img" src="../../images/enterTips/yifan.jpg"></image>
+    </view>
+
+    <view class="list-item">
+     <view class="list-item-left">
+        <view class="list-item-left-top">
+          <view class="list-order">3</view>
+          <text>法定代表手持身份证正面照</text>
+        </view>
+        <view class="list-item-left-bottom">正面需清晰、拍出人物五官及身份证信息，不可自拍或只拍身份证</view>
+      </view>
+      <image class="img" src="../../images/enterTips/yifan.jpg"></image>
+    </view>
+
+    <view class="list-item">
+     <view class="list-item-left">
+        <view class="list-item-left-top">
+          <view class="list-order">4</view>
+          <text>法定代表手持身份证背面照</text>
+        </view>
+        <view class="list-item-left-bottom">正面需清晰、拍出人物五官及身份证信息，不可自拍或只拍身份证</view>
+      </view>
+      <image class="img" src="../../images/enterTips/yifan.jpg"></image>
+    </view>
+
+    <view class="list-item">
+     <view class="list-item-left">
+        <view class="list-item-left-top">
+          <view class="list-order">5</view>
+          <text>营业执照</text>
+        </view>
+        <view class="list-item-left-bottom">需文字清晰、边框完整、内容无遮挡</view>
+      </view>
+      <image class="img" src="../../images/enterTips/yifan.jpg"></image>
+    </view>
+
+    <view class="list-item">
+     <view class="list-item-left">
+        <view class="list-item-left-top">
+          <view class="list-order">6</view>
+          <text>许可证</text>
+        </view>
+        <view class="list-item-left-bottom">需文字清晰、边框完整、内容无遮挡</view>
+      </view>
+      <image class="img" src="../../images/enterTips/yifan.jpg"></image>
+    </view>
+
+  </view>
+  <navigator url="../sidebar/sidebar" open-type="navigate" class="navigator-ok">
+    <button class="button-ok">我准备好了</button>
+  </navigator>
+</view>

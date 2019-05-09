@@ -1,0 +1,67 @@
+<!--pages/sidebar/sidebar.wxml-->
+<!-- 侧边栏+个人信息+商家入驻+我的店铺 by 吴成文-->
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <view class="userinfo-1">
+      <view
+        class="userinfo-avatar"
+        style="background-image: url({{headImageUrl}})"
+      ></view>
+        <button class="userinfo-nickname" open-type='getUserInfo' lang="zh_CN"  bindgetuserinfo="bindGetUserInfo">{{nickname}}</button>
+    </view> <!-- 这里判断用户是否已经登录，若没有登录，则可以通过这里登录
+                    若已经登录，可以通过点击这里查看个人信息，包括用户名，电话，所属学校。 -->
+    
+    <view class="navigator-arrow"></view>
+
+  </view>
+
+
+  <!-- 跳转到我的订单页面 -->
+  <view class="tunnel">
+    <navigator url="sidebar" open-type="navigate" class="tunnel-text">
+      <view class="navigator-first">
+        <image class="icon" src="../../images/sidebar/myOrder.png"></image>
+        <text>我的订单</text>
+      </view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+  </view>
+
+  <!-- 跳转到我的店铺页面 -->
+  <view class="tunnel">
+    <navigator url="sidebar" open-type="navigate" class="tunnel-text">
+     <view class="navigator-first">
+        <image class="icon" src="../../images/sidebar/myStore.png"></image>
+        <text>我的店铺</text><!--从这里跳转到我的店铺页面-->
+      </view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+  </view>
+
+  <!-- 跳转到商家入驻页面 -->
+  <view class="tunnel">
+    <navigator url="../enterTips/enterTips" open-type="navigate" class="tunnel-text">
+     <view class="navigator-first">
+        <image class="icon" src="../../images/sidebar/coperation.png"></image>
+        <text>商家入驻</text><!--从这里跳转到商家创建店铺的页面--> 
+      </view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+  </view>
+
+   <!-- 弹出我们的联系方式及简单介绍 -->
+ <view class="tunnel">
+    <navigator url="../aboutUs/aboutUs" open-type="navigate" class="tunnel-text">
+     <view class="navigator-first">
+        <image class="icon" src="../../images/sidebar/about-us.png"></image>
+        <text>关于我们</text>
+      </view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    
+  </view>
+</view>
+

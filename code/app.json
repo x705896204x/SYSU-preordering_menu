@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/sidebar/sidebar",
+    "pages/aboutUs/aboutUs",
+    "pages/enterTips/enterTips",
+    "pages/fullyUserInfo/fullyUserInfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3cb371",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

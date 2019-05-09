@@ -1,0 +1,98 @@
+/* pages/enterTips/enterTips.wxss */
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0;
+  box-sizing: border-box;
+} 
+
+
+.title{
+  font-size: 38rpx;
+  margin:10px 0 20px 0;
+  display: flex;
+  align-items: center;
+  color: orange
+}
+
+.tip-img{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/*让每一条提示从上到下排列*/
+.list{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+/*设计每一条提示的格式*/
+.list-item{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding:0 20px 0 20px;
+}
+
+/*设计每一条内左半部分提示的格式*/
+.list-item-left{
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  margin-right: 10px;
+  width: 65%;
+}
+
+/*设计每一条提示内左半部分的上半部分的格式*/
+.list-item-left-top{
+  display: flex;
+  flex-direction: row;
+  font-size: 34rpx;
+  align-items: center;
+}
+
+/*设计圆圈序号*/
+.list-order {
+  display: flex;
+  width: 35rpx;
+  height: 35rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: mediumseagreen;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+  font-size: 15px;
+  color: white;
+  margin-right: 5px;
+}
+
+.list-item-left-bottom{
+  padding-left: 20px;
+  font-size: 30rpx;
+  color: gray;
+}
+
+.img{
+  width: 35%;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.navigator-ok{
+  margin: 40px 0 60px 0;
+}
+
+.button-ok{
+  background-color: mediumseagreen;
+}

@@ -1,0 +1,63 @@
+<!--pages/fullyUserInfo/fullyUserInfo.wxml-->
+<!--pages/sidebar/sidebar.wxml-->
+<!-- 侧边栏+个人信息+商家入驻+我的店铺 by 吴成文-->
+<!--index.wxml-->
+<view class="settings">
+  
+  <view class="buttons">
+    <view size='mini' type='primary' class="ok-btn" bindtap='bindOkClick'>完成</view>
+    <image class="edit-btn" src="../../images/fullyUserInfo/edit.png" bindtap='bindEdit'></image>
+  </view>
+  
+  <!-- 用户头像 -->
+  <view class="headImage">
+        <view class="item-first" >
+          <text>头像</text>
+        </view>
+        <view class="item-second">
+          <image  class="headImage-second"  src="{{headImagePath}}" bindtap='changeHeadImage'></image>
+        </view>
+  </view>
+
+
+  <!-- 用户名-->
+  <view class="tunnel">
+      <view class="item-first">
+        <text>用户名</text>
+      </view>
+      <view class="item-second {{edit==true?'sec-col-edit':'sec-col-ok'}}">
+        <input disabled="{{userNm_dis}}" value="{{userName}}" class="nameAndPhon-input"></input>
+      </view>
+  </view>
+
+  <!-- 学校-->
+  <view class="tunnel">
+     <view class="item-first">
+        <text>学校</text><!--从这里跳转到我的店铺页面-->
+      </view>
+      <picker disabled='{{school_dis}}' bindchange='bindSchoolPicker' class="item-second {{edit==true?'sec-col-edit':'sec-col-ok'}}"  value="{{scoPicIndex}}" range="{{schools}}">
+        {{schools[scoPicIndex]}}
+      </picker>
+  </view>
+
+  <!-- 电话 -->
+  <view class="tunnel">
+     <view class="item-first">
+        <text>电话</text><!--从这里跳转到商家创建店铺的页面--> 
+      </view>
+      <view class="item-second {{edit==true?'sec-col-edit':'sec-col-ok'}}">
+        <input disabled="{{phnum_dis}}" type="number" value="15662771421" class="nameAndPhon-input"></input>
+      </view>
+  </view>
+
+   <!-- 性别 -->
+ <view class="tunnel">
+     <view class="item-first">
+        <text>性别</text>
+      </view>
+      <picker disabled='{{gend_dis}}' bindchange='bindGenderPicker' class="item-second {{edit==true?'sec-col-edit':'sec-col-ok'}}"  value="{{gendPicIndex}}" range="{{genders}}">
+        {{genders[gendPicIndex]}}
+      </picker>
+  </view>
+
+</view>
