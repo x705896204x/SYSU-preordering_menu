@@ -16,3 +16,24 @@
   },
   "sitemapLocation": "sitemap.json"
 }
+
+{
+  "pages": [
+    "pages/orderManage/orderManage",
+    "pages/orderManage/orderDeatail/orderDeatail",
+    "pages/home/home",
+    "pages/me/me"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#237346",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}
