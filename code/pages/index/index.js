@@ -245,7 +245,7 @@ Page({
   },
   getin:  function(event){
     wx.redirectTo({
-      url: '',
+      url: '../sidebar/sidebar',
     })
   }
 })

@@ -39,5 +39,12 @@ Page({
       index: e.detail.value,
       isSelected: true
     })
+  },
+
+  bindToIndex(e){
+    wx.redirectTo({
+      url: '../index/index',
+    })
   }
+
 })

@@ -21,7 +21,7 @@
 
   <!-- 跳转到我的订单页面 -->
   <view class="tunnel">
-    <navigator url="sidebar" open-type="navigate" class="tunnel-text">
+    <navigator url="../orderManage/orderManage" open-type="navigate" class="tunnel-text">
       <view class="navigator-first">
         <image class="icon" src="../../images/sidebar/myOrder.png"></image>
         <text>我的订单</text>

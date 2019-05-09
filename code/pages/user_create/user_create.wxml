@@ -9,5 +9,5 @@
   </picker>
   <input type='number' class = "input" id="phone" placeholder='请输入11位电话号码' ></input>
   <input type='number' class = "input" id='student_num' placeholder='请输入学号'></input>
-  <button type='primary' class='positive' size='defalut'>确认</button>
+  <button type='primary' class='positive' size='defalut' bindtap='bindToIndex'>确认</button>
 </view>
