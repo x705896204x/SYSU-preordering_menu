@@ -1,0 +1,35 @@
+<!--主页html代码 作者：吉阁尔-->
+<view class="container">
+  <view class="aside">
+    <view class="{{tabIndex === index ? 'menu active' : 'menu'}}" wx:for="{{menus}}" wx:key="{{item.id}}" data-index="{{index}}" bindtap='tabMenu'>{{item.menu}}
+    </view>
+  </view>
+  <view class="item-content">
+    <view class="{{orderCount.num === 0 ? 'box' : 'box active'}}">
+      <view class="item" wx:for="{{items}}" wx:key="{{item.id}}">
+        
+        <image  src="../../images/index/dapanji.jpeg"></image>
+        <text class="title">{{item.title}}</text>
+        <text class="price">￥ {{item.price}} 元</text>
+        <view class="opera">
+          <text class="btn_price " bindtap='del' data-id='item.id' data-index='{{index}}'>-</text>
+          <text class="num">{{item.num}}</text>
+          <text class="btn_price" bindtap="add" data-id="{{item.id}}" data-index="{{index}}">+</text>
+        </view>
+        <!--<text class="{{item.active ? 'btn active' : 'btn'}}" bindtap='addOrder' data-id="{{item.id}}" data-index="{{index}}">添加</text>-->
+      </view>
+    </view>
+  </view>
+  <view class="ruzhu" >
+    <text bindtap='getin'>我要入驻</text>
+  </view>
+  <view class="bottom-bar">
+    <view class="count">
+        共 <text class="num">{{orderCount.num}} 件</text>     
+        合计 <text class="num">{{orderCount.money}} 元</text> 
+    </view>
+    <view class="btn">
+        <text bindtap='card'>购物车</text>
+    </view>
+  </view>
+</view>
