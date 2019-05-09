@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button  open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 开始体验 </button>
+
+  </view>
+</view>
