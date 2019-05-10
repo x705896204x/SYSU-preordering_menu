@@ -244,8 +244,8 @@ Page({
     });
   },
   getin:  function(event){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../sidebar/sidebar',
-    })
+    }) 
   }
 })

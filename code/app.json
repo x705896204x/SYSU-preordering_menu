@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/auth/auth",
-    "pages/sidebar/sidebar",
     "pages/aboutUs/aboutUs",
     "pages/enterTips/enterTips",
+    "pages/sidebar/sidebar",
     "pages/fullyUserInfo/fullyUserInfo",
     "pages/user_create/user_create",
     "pages/index/index",
