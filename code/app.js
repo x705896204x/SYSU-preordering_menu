@@ -1,5 +1,6 @@
 //app.js
 App({
+
   onLaunch: function () {
 
     if (!wx.cloud) {
@@ -10,7 +11,7 @@ App({
       })
     }
 
-    this.globalData = {}
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -44,6 +45,10 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfor: {
+      openid: ""
+    }/*记录用户所有信息，包括头像profileImage, 用户名userName, 
+                    学校数组下标scoPicIndex, 性别数组下标gendPicIndex
+                    电话号码phoneNum， 唯一标识openid*/
   }
 })

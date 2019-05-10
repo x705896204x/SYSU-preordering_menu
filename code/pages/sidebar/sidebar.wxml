@@ -1,15 +1,17 @@
 <!--pages/sidebar/sidebar.wxml-->
 <!-- 侧边栏+个人信息+商家入驻+我的店铺 by 吴成文-->
+<!--存在的问题：微信返回的性别存在模糊不清的问题-->
 <!--index.wxml-->
 <view class="container">
 
   <!-- 用户 openid -->
   <view class="userinfo">
     <view class="userinfo-1">
-      <view
+      <image
+        mode="aspectFit"
         class="userinfo-avatar"
-        style="background-image: url({{headImageUrl}})"
-      ></view>
+        src="{{headImageUrl}}"
+      ></image>
         <button class="userinfo-nickname" open-type='getUserInfo' lang="zh_CN"  bindgetuserinfo="bindGetUserInfo">{{nickname}}</button>
     </view> <!-- 这里判断用户是否已经登录，若没有登录，则可以通过这里登录
                     若已经登录，可以通过点击这里查看个人信息，包括用户名，电话，所属学校。 -->
