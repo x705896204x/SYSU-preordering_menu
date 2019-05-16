@@ -8,7 +8,9 @@
     "pages/user_create/user_create",
     "pages/index/index",
     "pages/orderManage/orderManage",
-    "pages/orderManage/orderDeatail/orderDeatail"
+    "pages/orderManage/orderDeatail/orderDeatail",
+    "pages/receiveOrder/orderDetailOwner/orderDetailOwner",
+    "pages/receiveOrder/receiveOrder"
   ],
   "window": {
     "backgroundTextStyle": "light",

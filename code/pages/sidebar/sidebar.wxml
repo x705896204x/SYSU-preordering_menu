@@ -34,7 +34,7 @@
 
   <!-- 跳转到我的店铺页面 -->
   <view class="tunnel">
-    <navigator url="sidebar" open-type="navigate" class="tunnel-text">
+    <navigator url="../receiveOrder/receiveOrder" open-type="navigate" class="tunnel-text">
      <view class="navigator-first">
         <image class="icon" src="../../images/sidebar/myStore.png"></image>
         <text>我的店铺</text><!--从这里跳转到我的店铺页面-->
