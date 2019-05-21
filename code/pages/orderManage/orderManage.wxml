@@ -13,7 +13,7 @@
     <scroll-view wx:key="unique" class="tableView" scroll-y="true" wx:if="{{hasData}}"  wx:for="{{ moneyInfo }}" wx:for-item="info">
       <view class="flexItem rowStyle tableViewCellHeader marginTop10" catchtap="goDeatailEvent">
         <image class="orderImage marginLeft12" src="/images/order/dingdan.png"></image>
-        <label class="color54 fontSize12">订单编号1: {{ orderNum }}</label>
+        <label class="color54 fontSize12">订单编号: {{ orderNum }}</label>
       </view>
       <view class="flexItem rowStyle  personInfo" catchtap="goDeatailEvent">
         <view class="flexItem rowStyle marginLeft12 centers">
