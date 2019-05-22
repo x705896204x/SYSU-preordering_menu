@@ -1,8 +1,7 @@
 <!--pages/sidebar/sidebar.wxml-->
 <!-- 侧边栏+个人信息+商家入驻+我的店铺 by 吴成文-->
-<!--存在的问题：微信返回的性别存在模糊不清的问题-->
 <!--index.wxml-->
-<view class="container">
+<view class="container_sidebar">
 
   <!-- 用户 openid -->
   <view class="userinfo">
