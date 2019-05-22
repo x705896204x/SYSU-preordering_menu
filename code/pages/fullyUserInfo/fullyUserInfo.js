@@ -23,6 +23,7 @@ Page({
     school_dis: true,
     phnum_dis: true,
     gend_dis: true,
+    animationData: {},
   },
   
   bindOkClick(e){
@@ -94,6 +95,9 @@ Page({
           gend_dis: true,
           edit: false,
         })
+        wx.setNavigationBarTitle({
+          title: '设置'
+        })
 
         wx.hideLoading()
         wx.showToast({
@@ -112,7 +116,18 @@ Page({
 
   bindEdit(e){
     console.log('edit发送点击，携带值为', e.detail.value)
-    
+    //添加旋转动画
+    const animation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'ease',
+    })
+    this.animation = animation
+
+    animation.rotateY(360).step()
+    this.setData({
+      animationData: animation.export()
+    })
+
     this.setData({
       userNm_dis: false,
       school_dis: false,
@@ -120,7 +135,9 @@ Page({
       gend_dis: false,
       edit: true,
     })
-
+    wx.setNavigationBarTitle({
+      title: '修改信息'
+    })
   },
 
   bindSchoolPicker(e) {

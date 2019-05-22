@@ -3,9 +3,9 @@
 <!-- 侧边栏+个人信息+商家入驻+我的店铺 by 吴成文-->
 <!--存在的bug： 从详情页修改完数据以后返回sidebar时不会更新sidebar的头像和用户名数据-->
 <!--index.wxml-->
-<view class="settings">
+<view class="settings" animation="{{animationData}}">
   
-  <view class="buttons">
+  <view class="buttons"  >
     <view size='mini' type='primary' class="ok-btn" bindtap='bindOkClick'>完成</view>
     <image class="edit-btn" src="../../images/fullyUserInfo/edit.png" bindtap='bindEdit'></image>
   </view>
@@ -27,7 +27,7 @@
         <text>用户名</text>
       </view>
       <view class="item-second {{edit==true?'sec-col-edit':'sec-col-ok'}}">
-        <input disabled="{{userNm_dis}}" value="{{userName}}" class="nameAndPhon-input" bindinput='bindUserNameInput'></input>
+        <input disabled="{{userNm_dis}}" value="{{userName}}" class="nameAndPhon-input" bindinput='bindUserNameInput' auto-focus maxlength="15"></input>
       </view>
   </view>
 
@@ -47,7 +47,7 @@
         <text>电话</text><!--从这里跳转到商家创建店铺的页面--> 
       </view>
       <view class="item-second {{edit==true?'sec-col-edit':'sec-col-ok'}}">
-        <input disabled="{{phnum_dis}}" type="number" value="{{phoneNum}}" class="nameAndPhon-input" bindinput='bindPhoneNumInput'></input>
+        <input disabled="{{phnum_dis}}" type="number" value="{{phoneNum}}" class="nameAndPhon-input" bindinput='bindPhoneNumInput' maxlength="11"></input>
       </view>
   </view>
 

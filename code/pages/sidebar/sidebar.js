@@ -25,6 +25,48 @@ Page({
     //首先判断是否有用户信息
     
   },
+  bindenterTips:function(e){
+    if (app.globalData.userInfor.openid=="")
+    {
+      wx.showToast({
+        title: '用户未登录',
+        icon:"none",
+        duration: 1000
+      })
+    }else{
+      wx.navigateTo({
+        url: '../enterTips/enterTips',
+      })
+    }
+  },
+
+  bindOrderManage:function(e){
+    if (app.globalData.userInfor.openid == "") {
+      wx.showToast({
+        title: '用户未登录',
+        icon: "none",
+        duration: 1000
+      })
+    } else {
+      wx.navigateTo({
+        url:'../orderManage/orderManage'
+      })
+    }
+  },
+
+  bindMyResturant:function(e){
+    if (app.globalData.userInfor.openid == "") {
+      wx.showToast({
+        title: '用户未登录',
+        icon: "none",
+        duration: 1000
+      })
+    } else {
+      wx.navigateTo({
+        url: '../receiveOrder/receiveOrder'
+      })
+    }
+  },
 
  bindGetUserInfo: function (e) {
    //this.data.loginState == true ||
@@ -40,8 +82,8 @@ Page({
     if (e.detail.userInfo) {
       //用户按了允许授权按钮
       wx.showLoading({
-     title: '正在登录',
-   })
+        title: '正在登录',
+      })
       var that = this;
       console.log("userinfor", e.detail.userInfo)
       //登录，获取用户openID
