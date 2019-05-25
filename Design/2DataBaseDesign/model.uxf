@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>513</x>
+      <y>216</y>
+      <w>144</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>Reservation
+-
+ReservationId/Key
+UserId/FKey
+RestaurantId/FKey
+TotalPrice
+ReserveTime
+CreateTime
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>297</x>
+      <y>216</y>
+      <w>117</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>Student
+-
+StudentId
+SchoolId/FKey</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>423</y>
+      <w>153</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>Restaurant
+-
+RestaurantId/Key
+OwnerId/FKey
+RestaurantName
+Address
+Describtion
+TelephoneNumber
+EnvironmentPhoto
+GatePhoto
+IdCardFrontPhoto
+IdCardBackPhoto
+BusinessLicense
+ProductionLicence
+SchoolId/FKey
+isReviewed</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>405</x>
+      <y>279</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+m2=1
+create &gt;</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>306</x>
+      <y>666</y>
+      <w>126</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Owner
+-
+IdentityCardNumber</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>423</x>
+      <y>648</y>
+      <w>207</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+owns &gt;</panel_attributes>
+    <additional_attributes>160.0;10.0;160.0;90.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>72</x>
+      <y>216</y>
+      <w>135</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>User
+-
+UserId/Key
+UserName
+UserTelephone
+Gender
+ProfileImage
+IsOwner</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>198</x>
+      <y>279</y>
+      <w>117</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>117</x>
+      <y>342</y>
+      <w>207</w>
+      <h>405</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;430.0;210.0;430.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>342</y>
+      <w>90</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+m2=1
+deal with ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>738</x>
+      <y>216</y>
+      <w>135</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>ReservationItem
+-
+ReservationItemId/Key
+ReservationId/FKey
+MenuItemId/FKey
+Count
+TotalPrice
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>738</x>
+      <y>450</y>
+      <w>144</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>MenuItem
+-
+MenuItemId/Key
+RestaurantId/FKey
+MenuItemName
+ItemDescription
+Price
+Photo
+Class</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>279</y>
+      <w>108</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+m2=1
+has &gt;</panel_attributes>
+    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>477</y>
+      <w>108</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+m2=1
+has &gt;</panel_attributes>
+    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>342</y>
+      <w>45</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..1
+</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>297</x>
+      <y>423</y>
+      <w>126</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>School
+-
+SchoolId
+SchoolName</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>342</y>
+      <w>63</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+m2=1
+from v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>531</y>
+      <w>180</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+locates in ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;180.0;80.0</additional_attributes>
+  </element>
+</diagram>
