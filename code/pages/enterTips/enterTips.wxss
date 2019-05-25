@@ -1,6 +1,6 @@
 /* pages/enterTips/enterTips.wxss */
 
-.container {
+.container_enterTips {
   height: 100%;
   display: flex;
   flex-direction: column;

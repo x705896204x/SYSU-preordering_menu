@@ -1,6 +1,6 @@
 <!--pages/enterTips/enterTips.wxml-->
 <!--商家入驻，创建店铺之前的提示页面 by 吴成文-->
-<view class="container">
+<view class="container_enterTips">
   <view class="title">
     <image src="../../images/enterTips/tip.png" class="tip-img"></image>
     <text>开店前请准备好以下图片资料</text>

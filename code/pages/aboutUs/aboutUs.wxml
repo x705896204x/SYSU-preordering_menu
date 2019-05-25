@@ -1,6 +1,6 @@
 <!--pages/aboutUs/aboutUs.wxml-->
 <!--关于我们 页面 by 吴成文-->
-<view class="container">
+<view class="page_aboutUs">
   <view class="logo">
     <image src="../../images/aboutUs/OLcanteen.jpg" class="logo-img"></image>
     <view class="logo-text">食在大学</view>               <view class="version">v1.0.0</view>          

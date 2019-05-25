@@ -1,8 +1,7 @@
 <!--pages/sidebar/sidebar.wxml-->
 <!-- 侧边栏+个人信息+商家入驻+我的店铺 by 吴成文-->
-<!--存在的问题：微信返回的性别存在模糊不清的问题-->
 <!--index.wxml-->
-<view class="container">
+<view class="container_sidebar">
 
   <!-- 用户 openid -->
   <view class="userinfo">
@@ -23,35 +22,35 @@
 
   <!-- 跳转到我的订单页面 -->
   <view class="tunnel">
-    <navigator url="../orderManage/orderManage" open-type="navigate" class="tunnel-text">
+    <view  bindtap='bindOrderManage' class="tunnel-text">
       <view class="navigator-first">
         <image class="icon" src="../../images/sidebar/myOrder.png"></image>
         <text>我的订单</text>
       </view>
       <view class="navigator-arrow"></view>
-    </navigator>
+    </view>
   </view>
 
   <!-- 跳转到我的店铺页面 -->
   <view class="tunnel">
-    <navigator url="../receiveOrder/receiveOrder" open-type="navigate" class="tunnel-text">
+    <view  bindtap='bindMyResturant' class="tunnel-text">
      <view class="navigator-first">
         <image class="icon" src="../../images/sidebar/myStore.png"></image>
         <text>我的店铺</text><!--从这里跳转到我的店铺页面-->
       </view>
       <view class="navigator-arrow"></view>
-    </navigator>
+    </view>
   </view>
 
   <!-- 跳转到商家入驻页面 -->
   <view class="tunnel">
-    <navigator url="../enterTips/enterTips" open-type="navigate" class="tunnel-text">
+    <view  bindtap='bindenterTips' class="tunnel-text">
      <view class="navigator-first">
         <image class="icon" src="../../images/sidebar/coperation.png"></image>
         <text>商家入驻</text><!--从这里跳转到商家创建店铺的页面--> 
       </view>
       <view class="navigator-arrow"></view>
-    </navigator>
+    </view>
   </view>
 
    <!-- 弹出我们的联系方式及简单介绍 -->
