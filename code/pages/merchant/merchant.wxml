@@ -1,0 +1,13 @@
+<view class="title">已有菜品</view>
+<view class="item-content">
+  <view class="box">
+    <view class="item" wx:for="{{items}}" wx:key="{{item.id}}">
+      <image  src="../../images/index/dapanji.jpeg"></image>
+      <text class="title">{{item.title}}</text>
+      <text class="price">￥ {{item.price}} 元</text>
+      <button class="del" bindtap="deleteFood">删除该菜品</button>
+    </view>
+  </view>
+</view>
+
+<button class="add" bindtap="addFood">添加菜品</button>

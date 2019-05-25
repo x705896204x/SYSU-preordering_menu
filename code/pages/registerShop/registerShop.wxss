@@ -1,0 +1,45 @@
+/* pages/registerShop/registerShop.wxss */
+
+page{
+    background: #fff;
+}
+.wraper .listItems{
+    padding: 0 30rpx;
+    height: 120rpx;
+    line-height: 120rpx;
+    border-bottom: 1rpx solid #f3f3f3;
+}
+.wraper .listItems .listLeft{
+    float: left;
+}
+.wraper .listItems .listRight{
+    float: left;
+    margin-top: 35rpx;
+    width: 420rpx;
+    margin-left: 20rpx;
+}
+.wraper .listItems .morenBtn{
+    color: #f12035;
+}
+.btnGroup .btn{
+    width: 80%;
+    height: 90rpx;
+    border-radius: 45rpx;
+    background: #f12035;
+    color: #fff;
+    margin-top: 30rpx;
+}
+
+.container{
+  margin-top: 13px;
+  width: 90%;
+  height: 0rpx;
+}
+
+.right{
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  color: #ccc;
+  margin-right: 20rpx;
+}
