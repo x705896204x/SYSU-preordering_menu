@@ -4,36 +4,237 @@ Page({
   data: {
     navBar: ['全部', '待付款', '已完成', '已取消'],
     currTab: 0,
-
-
-
-
-
-    price: "11.5",
-    totalIncome: 0.0,
-    runningMoney: 0.0,
-    publicWelfareMoney: 0.0,
-    orderNum: 'A88820190501010101',
-    appointmentNum: 5,
-    appointmentTime: '2019年05月02日  01:01',
-    orderTime: '2019年05月01日  12:05',
     hasData: true,
-    navTab: ["全部", "待评价", "退款"],
-    moneyInfo: [,,,,],
-    itemNum : [,,,],
-    foodTotal: 3,
     orderStatus: ['待付款', '已完成', '已取消'],
-    nickName: '麦当劳',
-    food: '麦辣鸡',
-    foodNum : 2,
-    phoneNum: '18888888888',
-    url: 'http://p1.meituan.net/deal/455f72aee0980f5f8427ff9088afb349150930.jpg',
-    statusImage: ['/images/order/daijiedai.png'],
-    currentNavtab:0,
-    statusText: ['待付款','已完成','已取消'],
-    startPoint:[0,0]
-    
-    
+    totalOrder: {
+      hasData: true,
+      array: [
+        {
+          timeStamp: 1558775684,
+          logo: 'http://p1.meituan.net/deal/455f72aee0980f5f8427ff9088afb349150930.jpg',
+          name: '麦当劳',
+          status: 0,
+          food: [
+            {
+              name: '麦辣鸡翅',
+              price: 11.5,
+              num: 2
+            },
+            {
+              name: '原味板烧鸡腿堡',
+              price: 20,
+              num: 1
+            },
+            {
+              name: '经典麦辣鸡腿汉堡',
+              price: 20,
+              num: 2
+            },
+          ],
+          num: 3,
+          price: 83
+        },
+        {
+          timeStamp: 1558775694,
+          logo: 'https://upload.wikimedia.org/wikipedia/zh/thumb/1/18/KFC.svg/1200px-KFC.svg.png',
+          name: '肯德基',
+          status: 1,
+          food: [
+            {
+              name: '热辣香骨头鸡T',
+              price: 11.5,
+              num: 4
+            },
+            {
+              name: '新奥尔良烤鸡腿堡ST',
+              price: 19.5,
+              num: 1
+            },
+          ],
+          num: 5,
+          price: 65.5
+        },
+        {
+          timeStamp: 1558775684,
+          logo: 'http://p1.meituan.net/deal/455f72aee0980f5f8427ff9088afb349150930.jpg',
+          name: '麦当劳',
+          status: 2,
+          food: [
+            {
+              name: '麦辣鸡翅',
+              price: 11.5,
+              num: 2
+            },
+            {
+              name: '原味板烧鸡腿堡',
+              price: 20,
+              num: 1
+            },
+          ],
+          num: 3,
+          price: 43
+        },
+        {
+          timeStamp: 1558775684,
+          logo: 'http://p1.meituan.net/deal/455f72aee0980f5f8427ff9088afb349150930.jpg',
+          name: '麦当劳',
+          status: 1,
+          food: [
+            {
+              name: '麦辣鸡翅',
+              price: 11.5,
+              num: 2
+            },
+            {
+              name: '原味板烧鸡腿堡',
+              price: 20,
+              num: 1
+            },
+          ],
+          num: 3,
+          price: 43
+        },
+        {
+          timeStamp: 1558775684,
+          logo: 'http://p1.meituan.net/deal/455f72aee0980f5f8427ff9088afb349150930.jpg',
+          name: '麦当劳',
+          status: 2,
+          food: [
+            {
+              name: '麦辣鸡翅',
+              price: 11.5,
+              num: 2
+            },
+            {
+              name: '原味板烧鸡腿堡',
+              price: 20,
+              num: 1
+            },
+          ],
+          num: 3,
+          price: 43
+        }
+      ]
+    },
+
+    waitOrder: {
+      hasData: true,
+      array: [
+        {
+          timeStamp: 1558775684,
+          logo: 'http://p1.meituan.net/deal/455f72aee0980f5f8427ff9088afb349150930.jpg',
+          name: '麦当劳',
+          status: 0,
+          food: [
+            {
+              name: '麦辣鸡翅',
+              price: 11.5,
+              num: 2
+            },
+            {
+              name: '原味板烧鸡腿堡',
+              price: 20,
+              num: 1
+            },
+          ],
+          num: 3,
+          price: 43
+        }
+      ]
+    },
+
+    finishOrder: {
+      hasData: true,
+      array: [
+        {
+          timeStamp: 1558775694,
+          logo: 'https://upload.wikimedia.org/wikipedia/zh/thumb/1/18/KFC.svg/1200px-KFC.svg.png',
+          name: '肯德基',
+          status: 1,
+          food: [
+            {
+              name: '热辣香骨头鸡T',
+              price: 11.5,
+              num: 4
+            },
+            {
+              name: '新奥尔良烤鸡腿堡ST',
+              price: 19.5,
+              num: 1
+            },
+          ],
+          num: 5,
+          price: 65.5
+        },
+        {
+          timeStamp: 1558775684,
+          logo: 'http://p1.meituan.net/deal/455f72aee0980f5f8427ff9088afb349150930.jpg',
+          name: '麦当劳',
+          status: 1,
+          food: [
+            {
+              name: '麦辣鸡翅',
+              price: 11.5,
+              num: 2
+            },
+            {
+              name: '原味板烧鸡腿堡',
+              price: 20,
+              num: 1
+            },
+          ],
+          num: 3,
+          price: 43
+        }
+      ]
+    },
+
+    cancelOrder: {
+      hasData: true,
+      array: [
+        {
+          timeStamp: 1558775684,
+          logo: 'http://p1.meituan.net/deal/455f72aee0980f5f8427ff9088afb349150930.jpg',
+          name: '麦当劳',
+          status: 2,
+          food: [
+            {
+              name: '麦辣鸡翅',
+              price: 11.5,
+              num: 2
+            },
+            {
+              name: '原味板烧鸡腿堡',
+              price: 20,
+              num: 1
+            },
+          ],
+          num: 3,
+          price: 43
+        },
+        {
+          timeStamp: 1558775684,
+          logo: 'http://p1.meituan.net/deal/455f72aee0980f5f8427ff9088afb349150930.jpg',
+          name: '麦当劳',
+          status: 2,
+          food: [
+            {
+              name: '麦辣鸡翅',
+              price: 11.5,
+              num: 2
+            },
+            {
+              name: '原味板烧鸡腿堡',
+              price: 20,
+              num: 1
+            },
+          ],
+          num: 3,
+          price: 43
+        }
+      ]
+    }
+
   },
 
   navBarTap: function (e) {
@@ -48,7 +249,7 @@ Page({
   },
 
   goDeatailEvent: function () {
-    wx.navigateTo({url: '../orderManage/orderDeatail/orderDeatail'});
+    wx.navigateTo({ url: '../orderManage/orderDeatail/orderDeatail' });
   },
 
 })

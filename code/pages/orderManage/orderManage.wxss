@@ -1,4 +1,4 @@
-.navbar{
+.navBar{
   flex: auto;
   display: flex;
   background: #fff;
@@ -16,6 +16,21 @@
   line-height: 90rpx;
 }
 
+.item.active{
+  color: #3cb371;
+}
+
+.item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  right: 30px;
+  height: 4rpx;
+  background: #3cb371;
+}
+
  .blank{
   width: 100%;
   height: 90rpx;
@@ -23,20 +38,7 @@
   line-height: 90rpx;
 }
 
-.navbar .item.active{
-  color: #3cb371;
-}
 
-.navbar .item.active:after{
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4rpx;
-  background: #3cb371;
-}
 
 
 /*commomStyle*/
@@ -205,7 +207,7 @@ tableViewCellStyle {
 }
 
 .personInfoTop {
-    border-top: #ccc 1px;
+    border-top: solid #eeeeee 1px;
 }
 
 .userHeader {
@@ -226,7 +228,7 @@ tableViewCellStyle {
     width: 100%;
     height: 44px;
     background-color: white;
-    margin-bottom: 7px;
+    border-bottom: solid #eee 1px;
 }
 
 .statusImage {
