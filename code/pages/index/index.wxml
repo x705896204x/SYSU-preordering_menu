@@ -3,6 +3,11 @@
   <view class="aside">
     <view class="{{tabIndex === index ? 'menu active' : 'menu'}}" wx:for="{{menus}}" wx:key="{{item.id}}" data-index="{{index}}" bindtap='tabMenu'>{{item.menu}}
     </view>
+    <view class="option" >
+    <button id='user_btn' bindtap='getin' >个</button>
+    
+    <image id='user_img' src='../../images/index/user_option.jpg'></image>
+    </view>
   </view>
   <view class="item-content">
     <view class="{{orderCount.num === 0 ? 'box' : 'box active'}}">

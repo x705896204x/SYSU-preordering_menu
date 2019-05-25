@@ -91,7 +91,7 @@ Page({
             wx.scanCode({
               onlyFromCamera: true,
               success: (res) => {
-                wx.redirectTo({
+                wx.navigateTo({
                   url: '../pay/pay'
                 });
               }
