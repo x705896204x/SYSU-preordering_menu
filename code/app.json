@@ -11,7 +11,8 @@
     "pages/orderManage/orderDeatail/orderDeatail",
     "pages/receiveOrder/orderDetailOwner/orderDetailOwner",
     "pages/receiveOrder/receiveOrder",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/registerShop/registerShop"
   ],
   "window": {
     "backgroundTextStyle": "light",
