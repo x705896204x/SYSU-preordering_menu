@@ -22,7 +22,7 @@
     "navigationBarTitleText": "食在大学",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true,
-    "backgroundColor": "#3f1f1f"
+    "backgroundColor": "#fff"
   },
   "networkTimeout": {
     "request": 10000,
