@@ -1,0 +1,74 @@
+<!--/* pages/registerShop/registerShop.wxml */-->
+
+<view class="wraper">
+    <view class="listItems">
+        <text class="listLeft">经营种类 </text>
+        <input id="name" class="listRight" type="text"  name=""/>
+    </view>
+     <view class="listItems">
+        <text class="listLeft">店铺地址 </text>
+        <input id="name" class="listRight" type="text"  name=""/>
+    </view>
+     <view class="listItems">
+        <text class="listLeft">门牌号 </text>
+        <input id="name" class="listRight" type="text" placeholder='详细地址 例：至善园5号418' name=""/>
+    </view>
+
+     <view class="listItems">
+        <text class="listLeft">门脸图 </text>
+        <input id="name" class="listRight" type="number" value=" 需与门脸图牌匾一致" name=""/>
+    </view>
+
+<button style="margin:30rpx;" bindtap="chooseimage1">获取图片</button>  
+<image src="{{tempFilePaths }}" mode="aspecFill" style="width: 50%; height: 300rpx"/>  
+
+     <view class="listItems">
+        <text class="listLeft">线下牌匾名称 </text>
+        <input id="name" class="listRight" type="text" placeholder='需与门脸图牌匾一致' name=""/>
+    </view>
+    <view class="listItems">
+        <text class="listLeft">店内环境图 </text>
+        <input id="name" class="listRight" type="number" value='需真实反应用餐环境' name=""/>
+    </view>
+
+<button style="margin:30rpx;" bindtap="chooseimage2">获取图片</button>  
+<image src="{{tempFilePaths }}" mode="aspecFill" style="width: 50%; height: 300rpx"/>  
+
+    <view class="listItems">
+        <text class="listLeft">联系人 </text>
+        <input id="name" class="listRight" type="text" placeholder='请输入联系人姓名' name=""/>
+    </view>
+    <view class="listItems">
+        <text class="listLeft">联系电话 </text>
+        <input id="name" class="listRight" type="number" placeholder='便于后续与您联系' name=""/>
+    </view>
+
+    <view class="listItems">
+        <text class="listLeft">营业执照 </text>
+        <input id="name" class="listRight" type="number" value='上传营业执照' name=""/>
+       <text class='right' bindtap="chooseimage3">></text>  
+    <image src="{{tempFilePaths }}" mode="aspecFill" style="width: 50%; height: 300rpx"/> 
+    </view>
+
+    <view class="listItems">
+    <button style="margin:30rpx;" bindtap="chooseimage1">获取图片</button>
+    <image src="{{tempFilePaths }}" mode="aspecFill" style="width: 50%; height: 300rpx"/> 
+    </view>
+
+    <view class="listItems">
+        <text class="listLeft">许可证 </text>
+        <input id="name" class="listRight" type="number" value='上传许可证' name=""/>
+    <text class='right' bindtap="chooseimage4">></text>  
+    
+    <image src="{{tempFilePaths }}" mode="aspecFill" style="width: 50%; height: 300rpx"/>    
+    </view>
+
+    <view class="listItems">
+    <button style="margin:30rpx;" bindtap="chooseimage1">获取图片</button>
+    <image src="{{tempFilePaths }}" mode="aspecFill" style="width: 50%; height: 300rpx"/> 
+    </view>
+
+    <view class="btnGroup">
+        <button class="btn">确认信息</button>
+    </view>
+</view>
