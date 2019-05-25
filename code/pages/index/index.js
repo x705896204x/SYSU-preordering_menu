@@ -42,50 +42,50 @@ Page({
       id: 1,
       title: '土豆丝拌面',
       price: 12,
-      active: false,
+      
       num: 0
     }, {
       id: 2,
       title: '豆角炒肉盖浇饭',
       price: 13,
-      active: false,
+      
       num: 0
     }, {
       id: 3,
       title: '大盘鸡盖饭',
       price: 14,
-      active: false,
+      
       num: 0
     }, {
       id: 4,
       title: '新疆拌面',
       price: 15,
-      active: false,
+      
       num: 0
     }, {
       id: 5,
       title: '西拉蛋拌面',
       price: 16,
-      active: false,
+      
       num: 0
     }, {
       id: 6,
       title: '土豆牛肉盖浇饭',
       price: 17,
-      active: false,
+      
       num: 0
     }, {
       id: 7,
       title: '可乐',
       price: 18,
-      active: false,
+      
       num: 0
       
     },{
       id:8,
       title: '温馨提示',
       price: 0.1,
-      active:false,
+      
       num:0
     }]
   },
@@ -117,7 +117,7 @@ Page({
     // 判断是否有选中商品
     if (that.data.orderCount.num !== 0) {
       // 跳转到购物车订单也
-      wx.redirectTo({
+      wx.navigateTo({
         url: '../order/order'
       });
     } else {
@@ -177,7 +177,7 @@ Page({
   },*/
   onLoad: function() {
     
-
+    
   },
   // 点击对应菜单添加按钮
   del: function (event) {
@@ -196,6 +196,17 @@ Page({
     that.setData({
       items: this.data.items
     });
+    // 将已经确定的菜单添加到购物单列表
+    this.data.items.forEach(item => {
+      if(item.num!==0){
+        subOrders.push(item);
+    }
+    });
+    wx.setStorage({
+      key: "orders",
+      data: subOrders
+    });
+    
     let money = 0;
     let num = 0;
     // 将已经确定总价格和数量求和
@@ -211,6 +222,8 @@ Page({
     this.setData({
       orderCount
     });
+    // 将选中的商品存储在本地
+    
   },
   // 点击对应菜单添加按钮
   add: function (event) {
@@ -227,6 +240,18 @@ Page({
     that.setData({
       items: this.data.items
     });
+    // 将已经确定的菜单添加到购物单列表
+    this.data.items.forEach(item => {
+      
+      if (item.num !== 0) {
+        subOrders.push(item);
+      }
+      
+    });
+    wx.setStorage({
+      key: "orders",
+      data: subOrders
+    });
     let money = 0;
     let num = 0;
     // 将已经确定总价格和数量求和
@@ -242,6 +267,8 @@ Page({
     this.setData({
       orderCount
     });
+    // 将选中的商品存储在本地
+    
   },
   getin:  function(event){
     wx.navigateTo({

@@ -1,5 +1,5 @@
 <!--主页html代码 作者：吉阁尔-->
-<view class="container">
+<view class="container_index">
   <view class="aside">
     <view class="{{tabIndex === index ? 'menu active' : 'menu'}}" wx:for="{{menus}}" wx:key="{{item.id}}" data-index="{{index}}" bindtap='tabMenu'>{{item.menu}}
     </view>
@@ -20,9 +20,7 @@
       </view>
     </view>
   </view>
-  <view class="ruzhu" >
-    <text bindtap='getin'>我要入驻</text>
-  </view>
+  
   <view class="bottom-bar">
     <view class="count">
         共 <text class="num">{{orderCount.num}} 件</text>     

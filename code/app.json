@@ -10,13 +10,14 @@
     "pages/orderManage/orderManage",
     "pages/orderManage/orderDeatail/orderDeatail",
     "pages/receiveOrder/orderDetailOwner/orderDetailOwner",
-    "pages/receiveOrder/receiveOrder"
+    "pages/receiveOrder/receiveOrder",
+    "pages/order/order"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#3cb371",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#237346",
+    "navigationBarTitleText": "SYSU点餐系统",
+    "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true,
     "backgroundColor": "#3f1f1f"
   },

@@ -42,7 +42,7 @@ Page({
   },
 
   bindToIndex(e){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../index/index',
     })
   }
