@@ -1,0 +1,56 @@
+.item-content .box .item image{
+    display:block;
+    float:left;
+    height:120px;
+    width:200px;
+    margin-right:10px;
+}
+
+.title {
+  text-align: center;
+  color: rebeccapurple 
+}
+
+.item-content .box .item .title{
+    margin-bottom:5px;
+    color: black;
+    font-weight:bolder;
+    display: flex;
+}
+
+.item-content .box .item .price{
+    color:#237346;
+    font-size:18px;
+    margin-bottom:5px;
+    display: flex;
+}
+
+.item-content .box {
+  padding-top: 30px;
+}
+
+.item-content{
+  float:left;
+  width:90%;
+  height:100%;
+  margin-left: 7%;
+  padding-bottom: 10px;
+}
+
+.item-content .box .del{
+  width: 120px;
+  margin-left:0px;
+  background-color: gray;
+  display: flex;
+}
+
+.item-content .box .item {
+  padding-bottom: 30px;
+}
+
+.add {
+  color: red;
+  background-color: azure;
+  width: 50%;
+  margin-left: 25%;
+}

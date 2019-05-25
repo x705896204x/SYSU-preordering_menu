@@ -1,0 +1,62 @@
+.outline {
+    margin-top: 10px;
+    width: 60%;
+    height: 200px;
+    margin-left: 20%;
+    border-width: 2px;
+    border-color: black;
+    background-color: whitesmoke;
+}
+
+.uploadImage {
+    margin-top: 10px;
+    width: 40%;
+    margin-left: 30%;
+    background-color: gold;
+    font-size: 14px;
+}
+
+.foodImage image {
+    margin-top: 10px;
+    width: 60%;
+    margin-left: 20%;
+    height: 200px;
+}
+
+.editName {
+    margin-top: 15px; 
+    font-size: 14px;
+    color: burlywood;
+
+}
+
+.editPrice {
+    margin-top: 15px; 
+    font-size: 14px;
+    color: blue;
+
+}
+
+.inputDescribe {
+    margin-top: 15px; 
+    font-size: 14px;
+    color: green;
+}
+
+.addSuccess {
+    margin-top: 20px;
+    margin-left: 30%;
+    width: 40%;
+    background-color: goldenrod;
+}
+
+.inputName {
+    margin-top: 10px;
+    height: 25px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: thin solid;
+    width: 85%;
+    background-color:white;
+
+}
