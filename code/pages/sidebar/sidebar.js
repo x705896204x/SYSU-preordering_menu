@@ -63,7 +63,7 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: '../receiveOrder/receiveOrder'
+        url: '../merchant/merchant'
       })
     }
   },

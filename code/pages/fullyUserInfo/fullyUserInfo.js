@@ -16,22 +16,45 @@ Page({
     userName:"",
 
     phoneNum:"",
+    studentId:"",
     
     dbUserInfoId:"",
-    edit:false,
-    userNm_dis: true,
-    school_dis: true,
-    phnum_dis: true,
-    gend_dis: true,
+  
     animationData: {},
   },
-  
+  //如果edit=true，那么页面上的信息可以修改，否则不可以修改
+  isEdit: function (edit) {
+
+    if(edit==true)
+    {
+      this.setData({
+        userNm_dis: false,
+        school_dis: false,
+        phnum_dis: false,
+        gend_dis: false,
+        studentId_dis:false,
+        edit: true
+      })
+      
+    }else{
+      this.setData({
+      edit:false,
+      userNm_dis:true,
+      school_dis: true,
+      studentId_dis: true,
+      phnum_dis: true,
+      gend_dis: true
+      })
+    }
+  },
+
+//填写完成，提交修改
   bindOkClick(e){
     var that = this
     if(this.data.edit==false)
       return;
     console.log('ok发送点击，携带值为', e.detail.value)
-    //把修改后的头像图片存储到“云开发存储”
+    
     wx.showLoading({
       title: '正在提交',
     })
@@ -43,7 +66,8 @@ Page({
         UserName: that.data.userName,
         School:that.data.scoPicIndex,
         UserTelephone:that.data.phoneNum,
-        Gender:that.data.gendPicIndex
+        Gender:that.data.gendPicIndex,
+        StudentId:that.data.studentId
       },
       success: res => {
         console.log("其它数据更新成功")
@@ -87,14 +111,10 @@ Page({
               })
             },
           })
-        }       
-        this.setData({
-          userNm_dis: true,
-          school_dis: true,
-          phnum_dis: true,
-          gend_dis: true,
-          edit: false,
-        })
+        }   
+
+        this.isEdit(false);    
+       
         wx.setNavigationBarTitle({
           title: '设置'
         })
@@ -127,14 +147,8 @@ Page({
     this.setData({
       animationData: animation.export()
     })
-
-    this.setData({
-      userNm_dis: false,
-      school_dis: false,
-      phnum_dis: false,
-      gend_dis: false,
-      edit: true,
-    })
+    this.isEdit(true); 
+   
     wx.setNavigationBarTitle({
       title: '修改信息'
     })
@@ -179,89 +193,11 @@ Page({
     this.data.phoneNum = e.detail.value
   },
 
+  bindStudentIdInput(e){
+    this.data.studentId = e.detail.value
+  },
   
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    //载入的时候从数据库加载详细信息
-    var that=this
-    const db = wx.cloud.database()
-    db.collection('User').where({
-      UserId: app.globalData.userInfor.openid
-    }).get({
-      success: res => {
-        //更新相关变量
-        app.globalData.userInfor.userName = res.data[0].UserName
-        app.globalData.userInfor.profileImage = res.data[0].ProfileImage
-        app.globalData.userInfor.gendPicIndex = res.data[0].Gender
-        if (res.data[0].UserTelephone != undefined)
-        {
-          app.globalData.userInfor.phoneNum = res.data[0].UserTelephone
-          this.setData({
-            phoneNum: app.globalData.userInfor.phoneNum,
-          })
-        }
-        if (res.data[0].School != undefined)
-        {
-          app.globalData.userInfor.scoPicIndex = res.data[0].School
-          this.setData({
-            scoPicIndex: app.globalData.userInfor.scoPicIndex
-          })
-        }
-         
-        //该条记录的ID
-        that.data.dbUserInfoId = res.data[0]._id
-
-        console.log("查询用户信息成功", res)
-        //更新界面信息
-        this.setData({
-          headImagePath: app.globalData.userInfor.profileImage,
-          userName: app.globalData.userInfor.userName,
-          gendPicIndex: app.globalData.userInfor.gendPicIndex,
-        })
-      },
-      fail: res=>{
-        console.log("查询用户信息失败")
-      }
-    })
-  
-   
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    console.log("下拉")
+  updateUserInfo: function (e) {
     var that = this
     const db = wx.cloud.database()
     db.collection('User').where({
@@ -285,6 +221,12 @@ Page({
           })
         }
 
+        if (res.data[0].StudentId != undefined) {
+          app.globalData.userInfor.studentId = res.data[0].StudentId
+          this.setData({
+            studentId: app.globalData.userInfor.studentId
+          })
+        }
         //该条记录的ID
         that.data.dbUserInfoId = res.data[0]._id
 
@@ -300,6 +242,51 @@ Page({
         console.log("查询用户信息失败")
       }
     })
+
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    //载入的时候从数据库加载详细信息
+    
+    this.updateUserInfo();
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.updateUserInfo();
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    console.log("下拉")
+    this.updateUserInfo();
   },
 
   /**

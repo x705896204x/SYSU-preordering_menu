@@ -34,11 +34,21 @@
   <!-- 学校-->
   <view class="tunnel">
      <view class="item-first">
-        <text>学校</text><!--从这里跳转到我的店铺页面-->
+        <text>学校</text>
       </view>
       <picker disabled='{{school_dis}}' bindchange='bindSchoolPicker' class="item-second {{edit==true?'sec-col-edit':'sec-col-ok'}}"  value="{{scoPicIndex}}" range="{{schools}}">
         {{schools[scoPicIndex]}}
       </picker>
+  </view>
+
+  <!-- 学号-->
+  <view class="tunnel">
+     <view class="item-first">
+        <text>学号</text>
+      </view>
+      <view class="item-second {{edit==true?'sec-col-edit':'sec-col-ok'}}">
+        <input disabled="{{studentId_dis}}" type="number" value="{{studentId}}"            class="nameAndPhon-input" bindinput='bindStudentIdInput' maxlength="8"></input>
+      </view>
   </view>
 
   <!-- 电话 -->

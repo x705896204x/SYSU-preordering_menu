@@ -74,7 +74,7 @@
     </view>
 
   </view>
-  <navigator url="../sidebar/sidebar" open-type="navigate" class="navigator-ok">
+  <navigator url="../registerShop/registerShop" open-type="navigate" class="navigator-ok">
     <button class="button-ok">我准备好了</button>
   </navigator>
 </view>

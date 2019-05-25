@@ -12,12 +12,14 @@
     "pages/receiveOrder/orderDetailOwner/orderDetailOwner",
     "pages/receiveOrder/receiveOrder",
     "pages/order/order",
-    "pages/registerShop/registerShop"
+    "pages/registerShop/registerShop",
+    "pages/merchant/merchant",
+    "pages/addFood/addFood"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#237346",
-    "navigationBarTitleText": "SYSU点餐系统",
+    "navigationBarTitleText": "食在大学",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true,
     "backgroundColor": "#3f1f1f"
