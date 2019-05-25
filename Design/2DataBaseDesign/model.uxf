@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>495</x>
-      <y>171</y>
+      <x>513</x>
+      <y>216</y>
       <w>144</w>
       <h>135</h>
     </coordinates>
@@ -23,24 +23,24 @@ CreateTime
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>279</x>
-      <y>171</y>
+      <x>297</x>
+      <y>216</y>
       <w>117</w>
       <h>135</h>
     </coordinates>
     <panel_attributes>Student
 -
 StudentId
-School</panel_attributes>
+SchoolId/FKey</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>486</x>
-      <y>378</y>
+      <x>504</x>
+      <y>423</y>
       <w>153</w>
-      <h>207</h>
+      <h>234</h>
     </coordinates>
     <panel_attributes>Restaurant
 -
@@ -55,14 +55,16 @@ GatePhoto
 IdCardFrontPhoto
 IdCardBackPhoto
 BusinessLicense
-ProductionLicence</panel_attributes>
+ProductionLicence
+SchoolId/FKey
+isReviewed</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>234</y>
+      <x>405</x>
+      <y>279</y>
       <w>126</w>
       <h>45</h>
     </coordinates>
@@ -75,8 +77,8 @@ create &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>279</x>
-      <y>396</y>
+      <x>306</x>
+      <y>666</y>
       <w>126</w>
       <h>108</h>
     </coordinates>
@@ -88,22 +90,22 @@ IdentityCardNumber</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>396</x>
-      <y>441</y>
-      <w>108</w>
-      <h>45</h>
+      <x>423</x>
+      <y>648</y>
+      <w>207</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1
 owns &gt;</panel_attributes>
-    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>160.0;10.0;160.0;90.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>54</x>
-      <y>171</y>
+      <x>72</x>
+      <y>216</y>
       <w>135</w>
       <h>135</h>
     </coordinates>
@@ -120,8 +122,8 @@ IsOwner</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>180</x>
-      <y>234</y>
+      <x>198</x>
+      <y>279</y>
       <w>117</w>
       <h>27</h>
     </coordinates>
@@ -131,19 +133,19 @@ IsOwner</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>99</x>
-      <y>297</y>
-      <w>198</w>
-      <h>180</h>
+      <x>117</x>
+      <y>342</y>
+      <w>207</w>
+      <h>405</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;180.0;200.0;180.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;430.0;210.0;430.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>558</x>
-      <y>297</y>
+      <x>576</x>
+      <y>342</y>
       <w>90</w>
       <h>99</h>
     </coordinates>
@@ -156,8 +158,8 @@ deal with ^</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>171</y>
+      <x>738</x>
+      <y>216</y>
       <w>135</w>
       <h>135</h>
     </coordinates>
@@ -174,8 +176,8 @@ TotalPrice
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>405</y>
+      <x>738</x>
+      <y>450</y>
       <w>144</w>
       <h>126</h>
     </coordinates>
@@ -186,14 +188,15 @@ RestaurantId/FKey
 MenuItemName
 ItemDescription
 Price
-Photo</panel_attributes>
+Photo
+Class</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>234</y>
+      <x>648</x>
+      <y>279</y>
       <w>108</w>
       <h>45</h>
     </coordinates>
@@ -206,8 +209,8 @@ has &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>432</y>
+      <x>648</x>
+      <y>477</y>
       <w>108</w>
       <h>45</h>
     </coordinates>
@@ -220,8 +223,8 @@ has &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>774</x>
-      <y>297</y>
+      <x>792</x>
+      <y>342</y>
       <w>45</w>
       <h>126</h>
     </coordinates>
@@ -230,5 +233,47 @@ m1=1
 m2=0..1
 </panel_attributes>
     <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>297</x>
+      <y>423</y>
+      <w>126</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>School
+-
+SchoolId
+SchoolName</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>342</y>
+      <w>63</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+m2=1
+from v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>531</y>
+      <w>180</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+locates in ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;180.0;80.0</additional_attributes>
   </element>
 </diagram>
