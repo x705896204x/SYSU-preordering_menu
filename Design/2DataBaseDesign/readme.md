@@ -50,10 +50,10 @@
 
 表头：
 
-| 属性 | RestaurantID | OwenId(其实就是UserID) | RestaurantName | Address | Description | TelephoneNumber |
-| ---- | ------------ | ---------------------- | -------------- | ------- | ----------- | --------------- |
-| 类型 | string       | string                 | string         | string  | string      | number          |
-
+| 属性 | RestaurantID | OwenId(其实就是UserID) | RestaurantName | Address | Description | TelephoneNumber | SchoolID | isReviewed |
+| ---- | ------------ | ---------------------- | -------------- | ------- | ----------- | --------------- | --------- | ---------- |
+| 类型 | string       | string                 | string         | string  | string      | number          | string | boolean |
+ 
 Restaurant续
 
 | EnvironmentPhoto(店内环境照片) | GatePhoto（门脸图照片） | IdCardFrontPhoto(身份证正面照) | IdCardBackPhoto(身份证背面照) | BusinessLicense(营业执照) | ProductionLicence(生产许可) |
@@ -84,10 +84,18 @@ Restaurant续
 
 表头：
 
-| 属性 | MenuItemId | RestaurantId(食堂Id) | MenuItemName(菜名) | ItemDescription | Price  | photo(菜品图片) |
-| ---- | ---------- | -------------------- | ------------------ | --------------- | ------ | --------------- |
-| 类型 | string     | string               | string             | string          | number | string          |
+| 属性 | MenuItemId | RestaurantId(食堂Id) | MenuItemName(菜名) | ItemDescription | Price  | photo(菜品图片) | Class(菜品类别) |
+| ---- | ---------- | -------------------- | ------------------ | --------------- | ------ | --------------- | ------------ |
+| 类型 | string     | string               | string             | string          | number | string          | string |
 
 相关问题：大家可以在这里写上开发过程中遇到的相关问题，或者解决办法，供大家学习
+
+表名: School
+
+表头:
+
+| 属性 | SchoolId(Key) | SchoolName |
+| ---- | ------------- | ---------- |
+| 类型 | string | string |
 
 ​			
