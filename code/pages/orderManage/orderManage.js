@@ -31,7 +31,7 @@ Page({
               num: 2
             },
           ],
-          num: 3,
+          num: 5,
           price: 83
         },
         {
@@ -136,9 +136,14 @@ Page({
               price: 20,
               num: 1
             },
+            {
+              name: '经典麦辣鸡腿汉堡',
+              price: 20,
+              num: 2
+            },
           ],
-          num: 3,
-          price: 43
+          num: 5,
+          price: 83
         }
       ]
     },
