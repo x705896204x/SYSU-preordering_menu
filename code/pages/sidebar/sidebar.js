@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    validateStatus: ['待审核', '审核中', '审核成功', '审核失败'],
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     logged: false,
     takeSession: false,
@@ -62,8 +63,27 @@ Page({
         duration: 1000
       })
     } else {
-      wx.navigateTo({
-        url: '../merchant/merchant'
+      const db = wx.cloud.database()
+      db.collection('User').where({
+        UserId: app.globalData.userInfor.openid
+      }).get({
+        success: res => {
+          if (res.data[0].validateCode === 0 || res.data[0].validateCode === 1) {
+            wx.showToast({
+              title: this.data.validateStatus[res.data[0].validateCode],
+              icon: 'none',
+              duration: 1000
+            })
+          }
+          else {
+            wx.navigateTo({
+              url: '../merchant/merchant'
+            })
+          }
+        },
+        fail: res => {
+          console.log('failed')
+        }
       })
     }
   },

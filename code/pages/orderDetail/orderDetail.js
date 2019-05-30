@@ -6,43 +6,15 @@ Page({
     orderStatus: ['待付款', '已完成', '已取消']
   },
 
-  onNavTap: function (e) {
-    this.setData({
-      currTab: e.currentTarget.dataset.navidx
-    })
-  },
-
-  queryDB: function () {
-    const db = wx.cloud.database()
-    db.collection('User').where({
-      UserId: app.globalData.userInfor.openid
-    }).get({
-      success: res => {
-        this.setData({
-          totalOrder: res.data[0].totalOrder,
-          waitOrder: res.data[0].waitOrder,
-          finishOrder: res.data[0].finishOrder,
-          cancelOrder: res.data[0].cancelOrder
-        })
-      },
-      fail: res => {
-        console.log('failed')
-      }
-    })
-  },
-
-  onOrderDetail: function (e) {
-    this.setData({
-      detailOrderStamp: e.currentTarget.dataset.orderid
-    })
-    wx.navigateTo({ url: '../orderDetail/orderDetail' })
-  },
-
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    this.queryDB()
+    var pages = getCurrentPages()
+    var prevPage = pages[pages.length - 2]
+    this.setData({
+      thisOrder: prevPage.data.totalOrder.array.find(o => o.orderStamp === prevPage.data.detailOrderStamp)
+    })
   },
 
   /**
@@ -77,7 +49,21 @@ Page({
    * Page event handler function--Called when user drop down
    */
   onPullDownRefresh: function () {
-    this.queryDB()
+    var pages = getCurrentPages()
+    var prevPage = pages[pages.length - 2]
+    const db = wx.cloud.database()
+    db.collection('User').where({
+      UserId: app.globalData.userInfor.openid
+    }).get({
+      success: res => {
+        this.setData({
+          thisOrder: res.data[0].totalOrder.array.find(o => o.orderStamp === prevPage.data.detailOrderStamp)
+        })
+      },
+      fail: res => {
+        console.log('failed')
+      }
+    })
     wx.stopPullDownRefresh()
   },
 

@@ -1,0 +1,61 @@
+<!--订单状态-->
+<view class='headerInfo'>
+  <view class='headerFlex'>
+    <view class='statusInfo'>
+      <label class='statusName'>{{"订单"}}{{orderStatus[thisOrder.status]}}</label>
+    </view>
+    <view class='footerInfo'>
+      <label class="footerButtonGreen" wx:if="{{thisOrder.status === 0}}">{{ "去支付" }}</label>
+      <label class="footerButtonYellow" wx:if="{{thisOrder.status != 0}}">{{ "去评价" }}</label>
+    </view>
+  </view>
+</view>
+
+<!--商品列表-->
+<view class='foodInfo'>
+  <view class='headerFlex'>
+    <view class='shopInfo'>
+      <image class="shopLogo" src="{{ thisOrder.logo }}"></image>
+      <label class='shopName'>{{ thisOrder.name }}</label>
+    </view>
+    <view wx:key="unique" wx:for="{{thisOrder.food}}" wx:for-index="totalOrderFoodIdx" wx:for-item="totalOrderFoodItem">
+      <view class='foodFlex'>
+        <image class="foodImg" src="{{ totalOrderFoodItem.img }}"></image>
+        <text class="foodName">{{ totalOrderFoodItem.name }}
+          <text class="foodNum">{{"x"}}{{ totalOrderFoodItem.num }}</text>
+        </text>
+        <label class="foodPrice">{{"￥"}}{{ totalOrderFoodItem.num * totalOrderFoodItem.price}}</label>
+      </view>
+    </view>
+    <view class='totalWrap'>
+      <label class='totalPay'>{{ "共计" }}
+        <label class='totalPayRed'>{{"￥"}}{{thisOrder.price}}</label>
+      </label>
+    </view>
+  </view>
+</view>
+
+<!--就餐信息-->
+<view class='dineInfo'>
+  <view class='headerFlex'>
+    <view class='paddingTop'>
+      <label class='itemName'>{{ "就餐时间"}}<label class='itemNameBlack'>{{thisOrder.dineTime}}</label></label>
+    </view>
+    <view class='paddingBottom'>
+      <label class="itemName">{{ "就餐地点" }}<label class='itemNameBlack'>{{thisOrder.dineAddress}}</label></label>
+    </view>
+  </view>
+</view>
+
+<!--订单信息-->
+<view class='orderInfo'>
+  <view class='headerFlex'>
+    <view class='paddingTop'>
+      <label class='itemName'>{{ "订单号码  "}}<label class='itemNameBlack'>{{thisOrder.orderId}}</label></label>
+    </view>
+    <label class="itemName">{{ "订单时间  " }}<label class='itemNameBlack'>{{thisOrder.orderTime}}</label></label>
+    <view class='paddingBottom'>
+      <label class="itemName">{{ "支付方式  " }}<label class='itemNameBlack'>{{"在线支付"}}</label></label>
+    </view>
+  </view>
+</view>
