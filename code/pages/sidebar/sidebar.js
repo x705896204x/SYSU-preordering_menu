@@ -63,6 +63,7 @@ Page({
       })
     } else {
       wx.navigateTo({
+        //这里应该加上判断这个用户是不是商家的逻辑，如果是才能进入
         url: '../merchant/merchant'
       })
     }

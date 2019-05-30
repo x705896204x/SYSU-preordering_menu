@@ -1,0 +1,117 @@
+/* pages/sidebar/sidebar.wxss */
+/**index.wxss**/
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.container_sidebar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0;
+  box-sizing: border-box;
+} 
+
+
+.userinfo-1, .userinfo, .tunnel {
+  margin-top: 5px;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+}
+
+.userinfo{
+  width: 100%;
+  height: 140rpx; 
+  justify-content: space-between;
+  padding: 0 40rpx 0 0;
+  box-sizing: border-box;
+}
+
+.userinfo-1{
+  height: 140rpx;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+}
+
+.userinfo-nickname {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size: 32rpx;
+  background-color: white;
+  background-size: cover;
+  
+}
+
+.userinfo-nickname::after {
+  border: none;
+}
+
+.tunnel {
+  height: 100rpx;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.tunnel-text {
+  padding: 0 40rpx 0 40rpx;
+  width: 100%;
+  line-height: 100rpx;
+  font-size: 34rpx;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navigator-arrow{
+  align-self:center;
+  width:10px;
+  height:10px;
+  border-top: 2px solid #999;
+  border-right: 2px solid #999;
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.navigator-first{
+  display: flex;
+  align-items: center;
+}
+
+.tunnel-text:first-child {
+  border-top: none;
+}
+
+.icon{
+  width:20px;
+  height:20px;
+  display: flex;
+  margin-right: 10px;
+}

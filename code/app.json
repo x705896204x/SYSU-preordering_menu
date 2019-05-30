@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/restaurantCenter/restaurantSetting/restaurantSetting",
+    "pages/restaurantCenter/restaurantCenter",
     "pages/auth/auth",
     "pages/aboutUs/aboutUs",
     "pages/enterTips/enterTips",
