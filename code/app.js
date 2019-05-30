@@ -46,7 +46,14 @@ App({
   },
   globalData: {
     userInfor: {
-      openid: ""
+      openid: "",
+      school: "",
+      phone: "",
+      profileImage: "",
+      gendPicIndex: 0,
+      userName: "",
+      studentId: "",
+
     }/*记录用户所有信息，包括头像profileImage, 用户名userName, 
                     学校数组下标scoPicIndex, 性别数组下标gendPicIndex
                     电话号码phoneNum， 唯一标识openid*/
