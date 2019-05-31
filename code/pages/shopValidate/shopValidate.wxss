@@ -1,0 +1,30 @@
+page {
+  background: #f2f2f2;
+}
+
+.headerInfo{
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+}
+
+.headerFlex{
+  background: #ffffff;
+  border: solid #ffffff 1rpx;
+  border-radius: 5rpx;
+}
+
+.statusInfo{
+  height: 90rpx;
+}
+
+.statusName{
+  display: flex;
+  height: 90rpx;
+  line-height: 90rpx;
+  align-items: center;
+  justify-content: center;
+  font-size: 35rpx;
+  font-weight: bold;
+}

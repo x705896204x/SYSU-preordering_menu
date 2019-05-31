@@ -47,6 +47,7 @@ App({
   globalData: {
     userInfor: {
       openid: "",
+<<<<<<< HEAD
       userName:"",
       profileImage:"",
       gendPicIndex:0,
@@ -54,6 +55,16 @@ App({
       phoneNum:0,
       studentId:""
     },/*记录用户所有信息，包括头像profileImage, 用户名userName, 
+=======
+      school: "",
+      phone: "",
+      profileImage: "",
+      gendPicIndex: 0,
+      userName: "",
+      studentId: "",
+
+    }/*记录用户所有信息，包括头像profileImage, 用户名userName, 
+>>>>>>> 127646427d5a475b1868b48945db37c9e818c6da
                     学校数组下标scoPicIndex, 性别数组下标gendPicIndex
                     电话号码phoneNum， 唯一标识openid*/
     restaurantInfor:{//从数据库拉下来的部分餐馆信息

@@ -10,13 +10,14 @@
     "pages/user_create/user_create",
     "pages/index/index",
     "pages/orderManage/orderManage",
-    "pages/orderManage/orderDeatail/orderDeatail",
-    "pages/receiveOrder/orderDetailOwner/orderDetailOwner",
+    "pages/orderDetail/orderDetail",
     "pages/receiveOrder/receiveOrder",
+    "pages/receiveOrder/orderDetailOwner/orderDetailOwner",
     "pages/order/order",
     "pages/registerShop/registerShop",
     "pages/merchant/merchant",
-    "pages/addFood/addFood"
+    "pages/addFood/addFood",
+    "pages/shopValidate/shopValidate"
   ],
   "window": {
     "backgroundTextStyle": "light",

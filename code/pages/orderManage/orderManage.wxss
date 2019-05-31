@@ -2,7 +2,7 @@
   flex: auto;
   display: flex;
   background: #fff;
-  border-bottom: solid #eeeeee 1px;
+  border-bottom: solid #dddddd 1rpx;
   position: fixed;
   top: 0;
   z-index:9999;
@@ -36,304 +36,123 @@
   height: 90rpx;
   background: #fff;
   line-height: 90rpx;
+  border-bottom: solid #dddddd 1rpx;
 }
 
-
-
-
-/*commomStyle*/
-
-.order-status{
-  height: 20px;
-  line-height: 20px;
-  margin-left: 20px;
-  color: gray;
-  font-size: 15px;
+ .shopInfo{
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  border-bottom: solid #cccccc 1rpx;
 }
 
-.order-content-info-price,.order-content-info-date,
-.order-content-info-howToDistribute{
-  height: 20px;
-  line-height: 20px;
-  margin-left: 20px;
-}
+ .shopLogo{
+   width: 80rpx;
+   height: 80rpx;
+   display: flex;
+   padding-left: 25rpx;
+   padding-right: 15rpx;
+   padding-top: 15rpx;
+   padding-bottom: 15rpx;
+   border-bottom: solid #ffffff 1rpx;
+   z-index:999;
+ }
 
-.order-content-info-price{
-  color: red;
-  font-size: 20px;
-}
+  .shopName{
+    height: 110rpx;
+    line-height: 110rpx;
+    font-weight: bold;
+    font-size: 32rpx;
+    align-items: center;
+    justify-content: center;
+  }
 
-page{
-    background-color:#fff;
-}
+  .shopStatus{
+    display: flex;
+    height: 110rpx;
+    line-height: 110rpx;
+    font-size: 28rpx;
+    padding-right: 25rpx;
+    position: absolute;
+    right: 0;
+    color: #3e3e3e;
+  }
 
-.blockItem {
-    display: block;
-}
+ .foodInfo{
+    padding-top: 15rpx;
+    padding-bottom: 25rpx;
+ }
 
-.flexItem {
+ .foodFlex{
     display: flex;
 }
 
-.floatLeft {
-    float: left;
-}
+  .foodName{
+    display: flex;
+    padding-left: 120rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 28rpx;
+    color: #3e3e3e;
+  }
 
-.floatRight {
-    float: right;
-}
+  .foodNum{
+    display: flex;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 25rpx;
+    color: #3e3e3e;
+    padding-right: 25rpx;
+    position: absolute;
+    right: 0;
+  }
 
-.columnStyle {
-    flex-direction: column;
-}
+  .totalWrap{
+    display: flex;
+    height: 60rpx;
+    line-height: 60rpx;
+  }
 
-.rowStyle {
-    flex-direction: row;
-}
+  .totalPay{
+    display: flex;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 24rpx;
+    color: #3e3e3e;
+    padding-right: 25rpx;
+    position: absolute;
+    right: 0;
 
-.heightAndWidth {
-    height: auto;
+  }
+
+  .totalPayBold{
+    display: flex;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 24rpx;
+    color: #3e3e3e;
+    font-weight: bold;
+  }
+
+  .orderFooter{
+    display: flex;
+    height: 110rpx;
+    line-height: 110rpx;
     width: 100%;
-}
+    border-bottom: solid #dddddd 1rpx;
+  }
 
-.centers {
-    justify-content: center;
-    align-items: center;
-}
-
-.color54 {
-    color: #545454;
-}
-
-.color7321 {
-    color: #ed7321;
-}
-
-.fontSize10 {
-    font-size: 10px;
-}
-
-.fontSize12 {
-    font-size: 12px;
-}
-
-.fontSize14 {
-    font-size: 14px;
-}
-
-.fontSize15 {
-    font-size: 15px;
-}
-
-.marginTop10 {
-    margin-top: 3px;
-}
-
-.marginLeft12 {
-    margin-left: 12px;
-}
-
-.marginRight12 {
-    margin-right: 12px;
-}
-
-.marginBottom10 {
-    margin-bottom: 10px;
-}
-
-/*diffStyle*/
-.container {
-    padding: 0;
-    height: 100%;
-}
-
-.menu {
-    background-color: white;
-}
-
-.orderMenu {
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
-}
-
-.line {
-    width: 36px;
-    height: 2px;
-    margin-bottom: 0;
-    margin-top: 10px;
-    margin-left: 6px;
-    background-color: #ed7321;
-}
-
-.orderImage {
-    width: 10px;
-    height: 11px;
-    margin-right: 5px;
-}
-
-.tableViewCellHeader {
-    height: 35px;
-    align-items: center;
-    border-bottom: solid #ccc 1px;
-    background-color: white;
-    width: 100%;
-}
-
-.tableViewCell {
-    padding-right: 12px;
-    padding-top: 15px;
-    padding-left: 12px;
-    background-color: white;
-    border-bottom: dashed #ccc 1px;
-}
-
-tableViewCellStyle {
-    background-color: white;
-}
-
-.cellStyle {
-    justify-content: space-between;
-    color: #ed7321;
-}
-
-.personInfo {
-    width: 100%;
-    height: 44px;
-    background-color: white;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: dashed #ccc 1px;
-}
-
-.personInfoTop {
-    border-top: solid #eeeeee 1px;
-}
-
-.userHeader {
-    width: 26px;
-    height: 26px;
-    border-radius: 5px;
-    margin-right: 5px;
-}
-
-.call {
-    width: 14px;
-    height: 14px;
-    border-radius: 14px;
-    margin-right: 5px;
-}
-
-.orderStatus {
-    width: 100%;
-    height: 44px;
-    background-color: white;
-    border-bottom: solid #eee 1px;
-}
-
-.statusImage {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    margin-right: 5px;
-}
-
-.statusText {
-    color: #999;
-}
-
-.tableViewX {
-    width: 100%;
-    height: auto;
-}
-
-
-
-
- .top-tab{
-  width: 100%;
-  height: 100rpx;
-  background: white;
-  color: #545454;
-  font-size: 35rpx;
-  line-height: 100rpx;
-  box-shadow: 0 3px 3px #bebebe;
-  position:fixed;
-  z-index:999;
-  top:0;
-  left: 0;
-  right: 0;
-}
-
- .top-tabe{
-  width: 100%;
-  height: 100rpx;
-  background: white;
-  color: #545454;
-  font-size: 30rpx;
-  line-height: 100rpx;
-  border-bottom: solid #ccc 1px;
-  z-index:999;
-  top:0;
-  left: 0;
-  right: 0;
-}
-
-.flex-tab{
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.flex-item{
-  flex-grow: 1;
-  text-align: center;
-}
-
-.toptab{
-  border-bottom: solid 3px transparent;
-  transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s  ease-in-out; /* Firefox 4 */
-  -webkit-transition: all 0.4s ease-in-out; /* Safari 和 Chrome */
-  -o-transition: all 0.4s  ease-in-out; /* Opera */
-}
-
-.toptab.active{
-  color: #237346;
-  border-bottom: solid 2px #237346;
-}
-
-.tab_con{ 
-    height: 100%;
-    background: #f5f5f5;
-    position: relative;
-    width: 500%;
-    left: 0;
-    transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s  ease-in-out; /* Firefox 4 */
-    -webkit-transition: all 0.4s ease-in-out; /* Safari 和 Chrome */
-    -o-transition: all 0.4s  ease-in-out; /* Opera */
-}
-
-.list_active0{
-    margin-left:0;
-}
-
-.list_active1{
-    margin-left:-100%;
-}
-
-.list_active2{
-    margin-left:-200%;
-}
-
-.width20 {
-    width: 20%;
-}
-
-page{
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
+  .footerButton{
+    border: solid #dddddd 3rpx;
+    border-radius: 5rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 29rpx;
+    padding-right: 32rpx;
+    padding-left: 32rpx;
+    padding-top: 7rpx;
+    padding-bottom: 7rpx;
+    position: absolute;
+    right: 25rpx;
+    color: #000000;
+  }

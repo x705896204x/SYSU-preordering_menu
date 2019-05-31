@@ -1,13 +1,15 @@
 <!--pages/user_create/user_create.wxml-->
-<view class="information">
-  <picker bindchange='bindPickerChange' value="{{index}}" range="{{university_name}}" class = "input">
-    <div id = "select">
-      <text wx:if="{{!isSelected}}" id = "select_text">选择学校</text>
-      <text wx:else>{{university_name[index]}}</text>
-      <image src='/images/sign_up/arrow_down.png ' id='arrow'></image>
-    </div>
-  </picker>
-  <input type='number' class = "input" id="phone" placeholder='请输入11位电话号码' ></input>
-  <input type='number' class = "input" id='student_num' placeholder='请输入学号'></input>
-  <button type='primary' class='positive' size='defalut' bindtap='bindToIndex'>确认</button>
+<view class='body'>
+  <view class="information" animation = "{{animation}}">
+    <picker bindchange='bindPickerChange' value="{{index}}" range="{{university_name}}" class = "input">
+      <div id = "select">
+        <text wx:if="{{!isSelected}}" id = "select_text">选择学校</text>
+        <text wx:else>{{university_name[index]}}</text>
+        <image src='/images/sign_up/arrow_down.png ' id='arrow' mode='scaleToFill'></image>
+      </div>
+    </picker>
+    <input type='number' class = "input" id="phone" bindinput='inputPhone' placeholder='请输入11位电话号码' ></input>
+    <input type='number' class = "input" id='student_num' bindinput='inputStudentId' placeholder='请输入学号'></input>
+    <button type='primary' class='positive' size='defalut' bindtap='bindToIndex'>确认</button>
+  </view>
 </view>

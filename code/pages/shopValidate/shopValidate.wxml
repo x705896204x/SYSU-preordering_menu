@@ -1,0 +1,8 @@
+<!--审核状态-->
+<view class='headerInfo'>
+  <view class='headerFlex'>
+    <view class='statusInfo'>
+      <label class='statusName'>{{validateStatus[validated]}}</label>
+    </view>
+  </view>
+</view>

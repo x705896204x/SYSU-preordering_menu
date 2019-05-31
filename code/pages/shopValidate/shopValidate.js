@@ -1,15 +1,7 @@
 const app = getApp();
 Page({
   data: {
-    navBar: ['全部', '待付款', '已完成', '已取消'],
-    currTab: 0,
-    orderStatus: ['待付款', '已完成', '已取消']
-  },
-
-  onNavTap: function (e) {
-    this.setData({
-      currTab: e.currentTarget.dataset.navidx
-    })
+    validateStatus: ['待审核', '审核中', '审核成功', '审核失败']
   },
 
   queryDB: function () {
@@ -19,23 +11,13 @@ Page({
     }).get({
       success: res => {
         this.setData({
-          totalOrder: res.data[0].totalOrder,
-          waitOrder: res.data[0].waitOrder,
-          finishOrder: res.data[0].finishOrder,
-          cancelOrder: res.data[0].cancelOrder
+          validated: res.data[0].validateCode
         })
       },
       fail: res => {
         console.log('failed')
       }
     })
-  },
-
-  onOrderDetail: function (e) {
-    this.setData({
-      detailOrderStamp: e.currentTarget.dataset.orderid
-    })
-    wx.navigateTo({ url: '../orderDetail/orderDetail' })
   },
 
   /**
