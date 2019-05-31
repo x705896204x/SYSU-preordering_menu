@@ -1,7 +1,5 @@
 {
   "pages": [
-    "pages/restaurantCenter/restaurantSetting/restaurantSetting",
-    "pages/restaurantCenter/restaurantCenter",
     "pages/auth/auth",
     "pages/aboutUs/aboutUs",
     "pages/enterTips/enterTips",
@@ -17,7 +15,9 @@
     "pages/registerShop/registerShop",
     "pages/merchant/merchant",
     "pages/addFood/addFood",
-    "pages/shopValidate/shopValidate"
+    "pages/shopValidate/shopValidate",
+    "pages/restaurantCenter/restaurantSetting/restaurantSetting",
+    "pages/restaurantCenter/restaurantCenter"
   ],
   "window": {
     "backgroundTextStyle": "light",

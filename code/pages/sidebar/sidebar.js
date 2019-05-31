@@ -63,11 +63,11 @@ Page({
         duration: 1000
       })
     } else {
-<<<<<<< HEAD
+
       wx.navigateTo({
         //这里应该加上判断这个用户是不是商家的逻辑，如果是才能进入
         url: '../merchant/merchant'
-=======
+      })
       const db = wx.cloud.database()
       db.collection('User').where({
         UserId: app.globalData.userInfor.openid
@@ -89,7 +89,7 @@ Page({
         fail: res => {
           console.log('failed')
         }
->>>>>>> 127646427d5a475b1868b48945db37c9e818c6da
+
       })
     }
   },

@@ -47,7 +47,6 @@ App({
   globalData: {
     userInfor: {
       openid: "",
-<<<<<<< HEAD
       userName:"",
       profileImage:"",
       gendPicIndex:0,
