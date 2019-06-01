@@ -1,0 +1,36 @@
+<!--pages/sidebar/sidebar.wxml-->
+<!-- 店铺中心 by 吴成文-->
+<!--进入这个页面之前，用户必须已经登录，并且用户已经确定是商家IsOwner为true-->
+<!--index.wxml-->
+<view class="container_sidebar">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <view class="userinfo-1">
+      <image
+        mode="aspectFit"
+        class="userinfo-avatar"
+        src="{{headImageUrl}}"
+      ></image>
+        <button class="userinfo-nickname" bindtap='bindToSetting'>{{nickname}}</button>
+    </view> <!-- 这里判断用户是否已经登录，若没有登录，则可以通过这里登录
+                    若已经登录，可以通过点击这里查看个人信息，包括用户名，电话，所属学校。 -->
+    
+    <view class="navigator-arrow"></view>
+
+  </view>
+
+
+  <!-- 跳转到我的订单页面 -->
+  <view class="tunnel">
+    <view  bindtap='bindOrderManage' class="tunnel-text">
+      <view class="navigator-first">
+        <image class="icon" src="../../images/sidebar/myOrder.png"></image>
+        <text>我的订单</text>
+      </view>
+      <view class="navigator-arrow"></view>
+    </view>
+  </view>
+    
+</view>
+

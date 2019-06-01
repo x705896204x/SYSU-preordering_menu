@@ -1,0 +1,79 @@
+<!-- 店铺设置 by 吴成文-->
+<view class="settings" animation="{{animationData}}">
+  <!--两个按钮 -->
+  <view class="buttons"  >
+    <view size='mini' type='primary' class="ok-btn" bindtap='bindOkClick'>完成</view>
+    <image class="edit-btn" src="../../../images/fullyUserInfo/edit.png" bindtap='bindEdit'></image>
+  </view>
+  
+  <!-- 店铺门面图片 -->
+  <view class="headImage">
+        <view class="item-first" >
+          <text>门面图片</text>
+        </view>
+        <view class="item-second">
+          <image  class="headImage-second"  src="{{GatePhoto}}" bindtap='changeGatePhoto'></image>
+        </view>
+  </view>
+   <!-- 店铺内部环境图片 -->
+   <view class="headImage">
+        <view class="item-first" >
+          <text>内部环境</text>
+        </view>
+        <view class="item-second">
+          <image  class="headImage-second"  src="{{EnvironmentPhoto}}" bindtap='changeEnvironmentPhoto'></image>
+        </view>
+  </view>
+
+
+  <!-- 店铺名称-->
+  <view class="tunnel">
+      <view class="item-first">
+        <text>店铺名称</text>
+      </view>
+      <view class="item-second {{edit==true?'sec-col-edit':'sec-col-ok'}}">
+        <input disabled="{{change_dis}}" value="{{RestaurantName}}" class="nameAndPhon-input" bindinput='bindRestaurantNameInput' auto-focus maxlength="15"></input>
+      </view>
+  </view>
+
+  <!-- 所属学校-->
+  <view class="tunnel">
+     <view class="item-first">
+        <text>学校</text>
+      </view>
+      <picker disabled='{{change_dis}}' bindchange='bindSchoolPicker' class="item-second {{edit==true?'sec-col-edit':'sec-col-ok'}}"  value="{{scoPicIndex}}" range="{{schools}}">
+        {{schools[scoPicIndex]}}
+      </picker>
+  </view>
+
+  <!-- 描述-->
+  <view class="tunnel">
+     <view class="item-first">
+        <text>店铺描述</text>
+      </view>
+      <view class="item-second {{edit==true?'sec-col-edit':'sec-col-ok'}}">
+        <input disabled="{{change_dis}}"  value="{{Description}}"            class="nameAndPhon-input" bindinput='bindDescriptionInput' maxlength="200"></input>
+      </view>
+  </view>
+
+  <!-- 电话 -->
+  <view class="tunnel">
+     <view class="item-first">
+        <text>电话</text><!--从这里跳转到商家创建店铺的页面--> 
+      </view>
+      <view class="item-second {{edit==true?'sec-col-edit':'sec-col-ok'}}">
+        <input disabled="{{change_dis}}" type="number" value="{{TelephoneNumber}}" class="nameAndPhon-input" bindinput='bindTelephoneNumberInput' maxlength="11"></input>
+      </view>
+  </view>
+
+   <!-- 店铺地址 -->
+ <view class="tunnel">
+     <view class="item-first">
+        <text>店铺地址</text>
+      </view>
+      <input disabled='{{change_dis}}' bindchange='bindAddressInput' class="item-second {{edit==true?'sec-col-edit':'sec-col-ok'}}"  value="{{Address}}" range="{{genders}}">
+        
+      </input>
+  </view>
+
+</view>
