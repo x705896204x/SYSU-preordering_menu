@@ -68,7 +68,7 @@ Page({
         UserId: app.globalData.userInfor.openid
       }).get({
         success: res => {
-          if (res.data[0].validateCode === 0 || res.data[0].validateCode === 1) {
+          if (!(res.data[0].validateCode === 2)) {
             wx.showToast({
               title: this.data.validateStatus[res.data[0].validateCode],
               icon: 'none',
