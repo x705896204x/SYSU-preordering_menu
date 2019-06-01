@@ -18,7 +18,8 @@
     "pages/shopValidate/shopValidate",
     "pages/orderReceive/orderReceive",
     "pages/restaurantCenter/restaurantCenter",
-    "pages/restaurantCenter/restaurantSetting/restaurantSetting"
+    "pages/restaurantCenter/restaurantSetting/restaurantSetting",
+    "pages/orderCustomer/orderCustomer"
   ],
   "window": {
     "backgroundTextStyle": "light",

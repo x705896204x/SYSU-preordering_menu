@@ -1,1 +1,173 @@
-/* pages/orderReceive/orderReceive.wxss */
+.navBar{
+  flex: auto;
+  display: flex;
+  background: #fff;
+  border-bottom: solid #dddddd 1rpx;
+  position: fixed;
+  top: 0;
+  z-index:9999;
+  width: 100%;
+}
+
+.item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+.item.active{
+  color: #3cb371;
+}
+
+.item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  right: 30px;
+  height: 4rpx;
+  background: #3cb371;
+}
+
+ .blank{
+  width: 100%;
+  height: 90rpx;
+  background: #fff;
+  line-height: 90rpx;
+  border-bottom: solid #dddddd 1rpx;
+}
+
+ .shopInfo{
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  border-bottom: solid #cccccc 1rpx;
+}
+
+ .shopLogo{
+   width: 80rpx;
+   height: 80rpx;
+   display: flex;
+   padding-left: 25rpx;
+   padding-right: 15rpx;
+   padding-top: 15rpx;
+   padding-bottom: 15rpx;
+   border-bottom: solid #ffffff 1rpx;
+   z-index:999;
+ }
+
+  .shopName{
+    height: 110rpx;
+    line-height: 110rpx;
+    font-weight: bold;
+    font-size: 32rpx;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shopStatus{
+    display: flex;
+    height: 110rpx;
+    line-height: 110rpx;
+    font-size: 28rpx;
+    padding-right: 25rpx;
+    position: absolute;
+    right: 0;
+    color: #3e3e3e;
+  }
+
+ .foodInfo{
+    padding-top: 15rpx;
+    padding-bottom: 25rpx;
+ }
+
+ .foodFlex{
+    display: flex;
+}
+
+  .foodName{
+    display: flex;
+    padding-left: 120rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 28rpx;
+    color: #3e3e3e;
+  }
+
+  .foodNum{
+    display: flex;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 25rpx;
+    color: #3e3e3e;
+    padding-right: 25rpx;
+    position: absolute;
+    right: 0;
+  }
+
+  .totalWrap{
+    display: flex;
+    height: 60rpx;
+    line-height: 60rpx;
+  }
+
+  .totalPay{
+    display: flex;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 24rpx;
+    color: #3e3e3e;
+    padding-right: 25rpx;
+    position: absolute;
+    right: 0;
+
+  }
+
+  .totalPayBold{
+    display: flex;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 24rpx;
+    color: #3e3e3e;
+    font-weight: bold;
+  }
+
+  .orderFooter{
+    display: flex;
+    height: 110rpx;
+    line-height: 110rpx;
+    width: 100%;
+    border-bottom: solid #dddddd 1rpx;
+  }
+
+  .footerButton{
+    border: solid #dddddd 3rpx;
+    border-radius: 5rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 29rpx;
+    padding-right: 32rpx;
+    padding-left: 32rpx;
+    padding-top: 7rpx;
+    padding-bottom: 7rpx;
+    position: absolute;
+    right: 25rpx;
+    color: #000000;
+  }
+
+  .footerButton1{
+    border: solid #dddddd 3rpx;
+    border-radius: 5rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 29rpx;
+    padding-right: 32rpx;
+    padding-left: 32rpx;
+    padding-top: 7rpx;
+    padding-bottom: 7rpx;
+    position: absolute;
+    right: 165rpx;
+    color: #000000;
+  }
