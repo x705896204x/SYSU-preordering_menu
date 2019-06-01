@@ -73,16 +73,16 @@ Page({
         UserId: app.globalData.userInfor.openid
       }).get({
         success: res => {
-          if (!(res.data[0].validateCode === 2)) {
+          if (res.data[0].validateCode === 2) {
+            wx.navigateTo({
+              url: '../merchant/merchant'
+            })
+          }
+          else {
             wx.showToast({
               title: this.data.validateStatus[res.data[0].validateCode],
               icon: 'none',
               duration: 1000
-            })
-          }
-          else {
-            wx.navigateTo({
-              url: '../merchant/merchant'
             })
           }
         },
