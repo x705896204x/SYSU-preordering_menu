@@ -77,9 +77,6 @@ Page({
               app.globalData.userInfor.userName = res.data[0].UserName
               app.globalData.userInfor.profileImage = res.data[0].ProfileImage
               app.globalData.userInfor.gendPicIndex = res.data[0].Gender
-
-             
-              wx.hideLoading()
               console.log('用户登录成功')
             }
           },
@@ -120,6 +117,33 @@ Page({
     wx.navigateTo({
       url: '../receiveOrder/receiveOrder'
     })
+  },
+
+
+//这个云函数最终会将所有学校的Id以及name分别对应的放在 
+//app.globalData.School.SchoolId和app.globalData.School.SchoolName 中
+  getSchools: function () {
+    var that = this
+    wx.cloud.callFunction({
+      name: 'getSchool',
+      success: function (res) {
+        console.log('查询学校', res)
+        var schoolId = []
+        var schoolName = []
+        var data = res.result.data
+        for (var counter = 0; counter < data.length; counter++) {
+          schoolId.push(data[counter].SchoolId)
+          schoolName.push(data[counter].SchoolName)
+        }
+        app.globalData.School.SchoolId = schoolId
+        app.globalData.School.SchoolName = schoolName
+
+        console.log(app.globalData.School.SchoolId)
+        console.log(app.globalData.School.SchoolName)
+      },
+      fail: console.error
+    })
+
   },
 
   getRestaurantInfor: function () {
@@ -177,7 +201,8 @@ Page({
    */
   onLoad: function (options) {
     //首先判断是否登录，如果没有登录，首先要进行登录，拿到openid以及UserId.但是当系统正常工作以后，这里可以没有任何东西
-    this.signin();//登录
+    //this.signin();//登录
+    this.getSchools()
     this.getRestaurantInfor();//获取餐馆信息
 
   },

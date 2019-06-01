@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    schools: ['请选择', '中山大学', '清华大学', '北京大学'],//由于数据库中存储的是index，所以这个列表不可以插入，只能追加
+    schools: [],//由于数据库中存储的是index，所以这个列表不可以插入，只能追加
     scoPicIndex: 0,
 
     genders: ['请选择', '男', '女'],
@@ -20,6 +20,7 @@ Page({
     Description:"",
     TelephoneNumber:"",
     Address:"",
+    SchoolId:"",
 
     animationData: {},
 
@@ -57,16 +58,17 @@ Page({
     const db = wx.cloud.database()
 
     //更新其它信息
+    var schoolId = app.globalData.School.SchoolId[that.data.scoPicIndex]
     db.collection('Restaurant').doc(that.data.dbRestaurantInfoId).update({
       data: {
         RestaurantName: that.data.RestaurantName,
         Description: that.data.Description,
         Address: that.data.Address,
-        SchoolId: that.data.SchoolId,
+        SchoolId: schoolId,
         TelephoneNumber: that.data.TelephoneNumber
       },
       success: res => {
-        console.log("其它数据更新成功")
+        console.log("其它数据更新结果", res.data)
 
         // console.log("临时路径", that.data.tempHeadImageUrl)
 
@@ -91,26 +93,60 @@ Page({
             },
             complete: res => {
               console.log('[上传图片] 完成：', res)
-              that.data.headImagePath = res.fileID
+              app.globalData.restaurantInfor.GatePhoto = res.fileID
               //更新数据库中的图片路径
-              console.log("headImagePath", that.data.headImagePath)
-              db.collection('User').doc(that.data.dbRestaurantInfoId).update({
+              console.log("GatePhoto ", res.fileID)
+              db.collection('Restaurant').doc(that.data.dbRestaurantInfoId).update({
                 data: {
-                  ProfileImage: that.data.headImagePath,
+                  GatePhoto: res.fileID,
                 },
                 success: res => {
-                  console.log("头像数据更新success")
+                  console.log("GatePhoto更新success")
                 },
                 fail: res => {
-                  console.log("头像数据更新失败")
+                  console.log("GatePhoto更新失败")
                 }
               })
             },
           })
         }
-        if (that.data.tempEnvironmentPhotoUrl == "")//如果环境图片也是新图片
+        if (that.data.tempEnvironmentPhotoUrl != "")//如果环境图片也是新图片
         {
-
+          const filePath = that.data.tempEnvironmentPhotoUrl
+          // 上传图片
+          var timestamp = Date.parse(new Date());
+          const cloudPath = 'RestaurantInfoImage/' + app.globalData.userInfor.openid + timestamp + filePath.match(/\.[^.]+?$/)[0]
+          wx.cloud.uploadFile({
+            cloudPath,
+            filePath,
+            success: res => {
+              console.log('[上传图片] 成功：', res)
+            },
+            fail: e => {
+              console.error('[上传] 失败：', e)
+              wx.showToast({
+                icon: 'none',
+                title: '上传失败',
+              })
+            },
+            complete: res => {
+              console.log('[上传图片] 完成：', res)
+              app.globalData.restaurantInfor.EnvironmentPhoto = res.fileID
+              //更新数据库中的图片路径
+              console.log("EnvironmentPhoto", res.fileID)
+              db.collection('Restaurant').doc(that.data.dbRestaurantInfoId).update({
+                data: {
+                  EnvironmentPhoto: res.fileID,
+                },
+                success: res => {
+                  console.log("EnvironmentPhoto更新success")
+                },
+                fail: res => {
+                  console.log("EnvironmentPhoto更新失败")
+                }
+              })
+            },
+          })
         }
 
         this.isEdit(false);
@@ -213,61 +249,79 @@ Page({
     this.data.Description = e.detail.value
   },
 
-  updateResturantInfo: function (e) {
-    //将所有与这个餐馆相关的基本信息从数据库拉下来，并以合适的方式存放到本地
+  getRestaurantInfor: function () {
     var that = this
+    //首先根据UserId去Resturant查找其对应的Resturant.并将它的信息拉下来，debug阶段这部分信息是手动添加上去的，
     const db = wx.cloud.database()
-    db.collection('User').where({
-      UserId: app.globalData.userInfor.openid
+    db.collection('Restaurant').where({
+      OwenId: app.globalData.userInfor.openid
     }).get({
       success: res => {
-        //更新相关变量
-        app.globalData.userInfor.userName = res.data[0].UserName
-        app.globalData.userInfor.profileImage = res.data[0].ProfileImage
-        app.globalData.userInfor.gendPicIndex = res.data[0].Gender
-        if (res.data[0].UserTelephone != undefined) {
-          app.globalData.userInfor.phoneNum = res.data[0].UserTelephone
-          this.setData({
-            phoneNum: app.globalData.userInfor.phoneNum,
-          })
-        }
-        if (res.data[0].School != undefined) {
-          app.globalData.userInfor.scoPicIndex = res.data[0].School
-          this.setData({
-            scoPicIndex: app.globalData.userInfor.scoPicIndex
-          })
-        }
+        console.log('店铺查询成功: ', res)
+        if (res.data.length == 1) {
+          //更新globalData
+          app.globalData.restaurantInfor.RestaurantId = res.data[0].RestaurantId
+          app.globalData.restaurantInfor.RestaurantName = res.data[0].RestaurantName
+          app.globalData.restaurantInfor.GatePhoto = res.data[0].GatePhoto
+          app.globalData.restaurantInfor.EnvironmentPhoto = res.data[0].EnvironmentPhoto
+          app.globalData.restaurantInfor.Description = res.data[0].Description
+          app.globalData.restaurantInfor.Address = res.data[0].Address
+          app.globalData.restaurantInfor.SchoolId = res.data[0].SchoolId
+          app.globalData.restaurantInfor.TelephoneNumber = res.data[0].TelephoneNumber
+          //更新界面信息
+          //从app.globalData.School.SchoolId中查询对应的Id知道其下标
 
-        if (res.data[0].StudentId != undefined) {
-          app.globalData.userInfor.studentId = res.data[0].StudentId
+          var index_schlId = app.globalData.School.SchoolId.indexOf(res.data[0].SchoolId)
+          if(index_schlId == -1)
+          {
+            console.log("School表中未找到对应与Restaurant表的SchoolId")
+          }
+            
           this.setData({
-            studentId: app.globalData.userInfor.studentId
+            GatePhoto: app.globalData.restaurantInfor.GatePhoto,
+            EnvironmentPhoto: app.globalData.restaurantInfor.EnvironmentPhoto,
+            schools: app.globalData.School.SchoolName,
+            scoPicIndex: index_schlId,
+            Description:app.globalData.restaurantInfor.Description,
+            RestaurantName: app.globalData.restaurantInfor.RestaurantName,
+            TelephoneNumber: app.globalData.restaurantInfor.TelephoneNumber,
+            Address: app.globalData.restaurantInfor.Address 
           })
+          that.data.dbRestaurantInfoId = res.data[0]._id
+          return
         }
-        //该条记录的ID
-        that.data.dbRestaurantInfoId = res.data[0]._id
+        if (res.data.length == 0) {
+          wx.showToast({
+            title: '用户未创建店铺',
+            icon: "none",
+            duration: 1000
+          })
+          console.log('该用户未创建店铺')
 
-        console.log("查询用户信息成功", res)
-        //更新界面信息
-        this.setData({
-          headImagePath: app.globalData.userInfor.profileImage,
-          userName: app.globalData.userInfor.userName,
-          gendPicIndex: app.globalData.userInfor.gendPicIndex,
-        })
+        }
+        else if (res.data.length >= 2) {
+          wx.showToast({
+            title: '用户创建店铺多于2个',
+            icon: "none",
+            duration: 1000
+          })
+          console.log('用户创建店铺多于2个')
+        }
       },
-      fail: res => {
-        console.log("查询用户信息失败")
+      fail(res) {
+        console.log('获取店铺信息失败')
+
       }
     })
-
   },
+
+ 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     //载入的时候从数据库加载详细信息
     this.isEdit(false)
-    this.updateResturantInfo();
   },
 
   /**
@@ -282,10 +336,11 @@ Page({
    */
   onShow: function () {
     //不需要从数据库更新信息，可以直接把globalData拿过来用
-    this.setData({
-      headImageUrl: app.globalData.restaurantInfor.GatePhoto,
-      nickname: app.globalData.restaurantInfor.RestaurantName
-    })
+    this.isEdit(false)
+    //每次更新的时候查询SchoolId，将SchoolId更新到数据库
+    this.getRestaurantInfor()
+    //把School从数据库拉下来，放在数组中。同时将School等于全局SchoolName,
+    
   },
 
   /**

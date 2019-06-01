@@ -62,7 +62,18 @@
       </view>
       <view class="navigator-arrow"></view>
     </navigator>
-    
+  </view>
+
+   <!-- 弹出我们的联系方式及简单介绍 -->
+ <view class="tunnel">
+    <navigator url="../restaurantCenter/restaurantCenter" open-type="navigate" class="tunnel-text">
+     <view class="navigator-first">
+        <image class="icon" src="../../images/sidebar/about-us.png"></image>
+        <text>临时连接跳到店铺中心页面</text>
+      </view>
+      <view class="navigator-arrow"></view>
+    </navigator>
   </view>
 </view>
 
+  
