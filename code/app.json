@@ -16,12 +16,9 @@
     "pages/merchant/merchant",
     "pages/addFood/addFood",
     "pages/shopValidate/shopValidate",
-<<<<<<< HEAD
-    "pages/orderReceive/orderReceive"
-=======
+    "pages/orderReceive/orderReceive",
     "pages/restaurantCenter/restaurantSetting/restaurantSetting",
     "pages/restaurantCenter/restaurantCenter"
->>>>>>> 1d5f5e09ddbe0f4875040c7177889a4ff713a8d9
   ],
   "window": {
     "backgroundTextStyle": "light",
