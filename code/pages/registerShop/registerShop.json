@@ -1,3 +1,7 @@
 {
+  "usingComponents": {
+    "imgupload": "../../pages/imgupload/imgupload"
+  },
+  "navigationBarBackgroundColor": "#237346",
   "navigationBarTitleText": "店铺信息"
 }

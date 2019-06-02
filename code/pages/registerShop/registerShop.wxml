@@ -1,74 +1,113 @@
 <!--/* pages/registerShop/registerShop.wxml */-->
 
-<view class="wraper">
-    <view class="listItems">
-        <text class="listLeft">经营种类 </text>
-        <input id="name" class="listRight" type="text"  name=""/>
-    </view>
-     <view class="listItems">
-        <text class="listLeft">店铺地址 </text>
-        <input id="name" class="listRight" type="text"  name=""/>
-    </view>
-     <view class="listItems">
-        <text class="listLeft">门牌号 </text>
-        <input id="name" class="listRight" type="text" placeholder='详细地址 例：至善园5号418' name=""/>
+  <view class="content">
+    <view class="row">
+      <view class="row-add">店铺地址</view>
+      <view class="row-input">
+        <input type="text" name="address" placeholder="输入店铺地址" bindinput='inputPrice' value="{{address}}"></input>
+      </view>
     </view>
 
-     <view class="listItems">
-        <text class="listLeft">门脸图 </text>
-        <input id="name" class="listRight" type="number" value=" 需与门脸图牌匾一致" name=""/>
+   <view class="row">
+      <view class="row-add">店铺描述</view>
+      <view class="row-input">
+        <input type="text" name="description" placeholder="简略描述" bindinput='inputPrice' value="{{descripton}}"></input>
+      </view>
     </view>
 
-<button style="margin:30rpx;" bindtap="chooseimage1">获取图片</button>  
-<image src="{{tempFilePaths }}" mode="aspecFill" style="width: 50%; height: 300rpx"/>  
-
-     <view class="listItems">
-        <text class="listLeft">线下牌匾名称 </text>
-        <input id="name" class="listRight" type="text" placeholder='需与门脸图牌匾一致' name=""/>
+    <view class="row">
+      <view class="row-add">店内环境图</view>
+      <view class="row-text">需真实反映用餐环境</view>
     </view>
-    <view class="listItems">
-        <text class="listLeft">店内环境图 </text>
-        <input id="name" class="listRight" type="number" value='需真实反应用餐环境' name=""/>
-    </view>
-
-<button style="margin:30rpx;" bindtap="chooseimage2">获取图片</button>  
-<image src="{{tempFilePaths }}" mode="aspecFill" style="width: 50%; height: 300rpx"/>  
-
-    <view class="listItems">
-        <text class="listLeft">联系人 </text>
-        <input id="name" class="listRight" type="text" placeholder='请输入联系人姓名' name=""/>
-    </view>
-    <view class="listItems">
-        <text class="listLeft">联系电话 </text>
-        <input id="name" class="listRight" type="number" placeholder='便于后续与您联系' name=""/>
+    <view class="image">
+    <imgupload
+      id = "imgupload1"
+      imageUrl = "{{imageUrl}}"
+    >
+    </imgupload>
     </view>
 
-    <view class="listItems">
-        <text class="listLeft">营业执照 </text>
-        <input id="name" class="listRight" type="number" value='上传营业执照' name=""/>
-       <text class='right' bindtap="chooseimage3">></text>  
-    <image src="{{tempFilePaths }}" mode="aspecFill" style="width: 50%; height: 300rpx"/> 
+    <view class="row">
+      <view class="row-add">门脸图</view>
+      <view class="row-text">需拍出完整门匾、门框</view>
+    </view>
+    <view class="image">
+    <imgupload
+      id = "imgupload2"
+      imageUrl = "{{imageUrl}}"
+    >
+    </imgupload>
     </view>
 
-    <view class="listItems">
-    <button style="margin:30rpx;" bindtap="chooseimage1">获取图片</button>
-    <image src="{{tempFilePaths }}" mode="aspecFill" style="width: 50%; height: 300rpx"/> 
+    <view class="row">
+      <view class="row-add">身份证反面照</view>
+      <view class="row-text">请确保照片清晰可见</view>
+    </view>
+    <view class="image">
+    <imgupload
+      id = "imgupload3"
+      imageUrl = "{{imageUrl}}"
+    >
+    </imgupload>
     </view>
 
-    <view class="listItems">
-        <text class="listLeft">许可证 </text>
-        <input id="name" class="listRight" type="number" value='上传许可证' name=""/>
-    <text class='right' bindtap="chooseimage4">></text>  
-    
-    <image src="{{tempFilePaths }}" mode="aspecFill" style="width: 50%; height: 300rpx"/>    
+    <view class="row">
+      <view class="row-add">身份证正面照</view>
+      <view class="row-text">请确保照片清晰可见</view>
+    </view>
+    <view class="image">
+    <imgupload
+      id = "imgupload4"
+      imageUrl = "{{imageUrl}}"
+    >
+    </imgupload>
     </view>
 
-    <view class="listItems">
-    <button style="margin:30rpx;" bindtap="chooseimage1">获取图片</button>
-    <image src="{{tempFilePaths }}" mode="aspecFill" style="width: 50%; height: 300rpx"/> 
+    <view class="row">
+      <view class="row-add">生产许可证</view>
+      <view class="row-text">上传许可证</view>
+    </view>
+    <view class="image">
+    <imgupload
+      id = "imgupload5"
+      imageUrl = "{{imageUrl}}"
+    >
+    </imgupload>
     </view>
 
-    <view class="btnGroup">
-        <button class="btn">确认信息</button>
+    <view class="row">
+      <view class="row-add">联系人</view>
+        <view class="row-input">
+        <input type="text" name="owner" placeholder="请输入联系人姓名" bindinput='inputPrice' value="{{owner}}"></input>
+      </view>
     </view>
-</view>
+
+    <view class="row">
+      <view class="row-add">店铺名称</view>
+        <view class="row-input">
+        <input type="text" name="shopname" placeholder="请输入店铺名" bindinput='inputPrice' value="{{shopname}}"></input>
+      </view>
+    </view>
+
+    <view class="row" bindtap="selectSch">
+      <view class="row-add">店铺所属学校</view>
+      <view class="row-input">
+        <text>{{school.name}}</text>
+      </view>
+      <view class="row-back">
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+    </view>
+
+    <view class="row">
+      <view class="row-add">联系电话</view>
+      <view class="row-input">
+        <input type="number" maxlength="11" name="phoneNum" placeholder="便于与您联系" value="{{phoneNum}}"></input>
+      </view>
+    </view>
+
+    <button type='primary' class='positive' size='default' bindtap='formSubmit'>确认</button>
+
+  </view>
+
+
