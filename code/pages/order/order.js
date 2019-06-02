@@ -1,4 +1,4 @@
-//index.js
+//order.js
 //获取应用实例
 const app = getApp()
 
@@ -7,7 +7,8 @@ Page({
     // 统计商品数量和价格
     orderCount: {
       num: 0,
-      money: 0
+      money: 0,
+      reservationid:"111111"
     },
     bottomFlag: false,
     // 提交的订单
@@ -127,6 +128,14 @@ Page({
           orderCount
         });
       }
+    })
+    
+  },
+  pass_rev_id:function(){
+    var rev_id=this.data.reservationid;
+    wx.setStorage({
+      key: 'pay',
+      data: 'rev_id',
     })
   }
 })

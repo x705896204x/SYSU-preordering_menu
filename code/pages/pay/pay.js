@@ -7,13 +7,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    reservationid:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
+
+    wx.getStorage({
+      key: 'pay',
+      success: function(res) {
+        that.setData({
+          reservationid:res.data
+        })
+      },
+    })
     qrcode = new QRCode('canvas', {
       text: "code=0000000000000",
       width: 150,
