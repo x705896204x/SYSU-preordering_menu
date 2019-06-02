@@ -1,0 +1,8 @@
+<view class="okay">
+  <icon type='success' size='100' color='green' ></icon>
+  <text>支付成功</text>
+  <view class='wxcode'>
+  <canvas class='canvas' canvas-id='canvas'></canvas>
+  </view>
+  <button size='18px' type='primary' bindtap="check_order">查看订单</button>
+</view>

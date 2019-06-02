@@ -1,0 +1,16 @@
+/* pages/pay/pay.wxss */
+.okay
+{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  
+
+}
+.canvas{
+  margin-left:85px;
+  margin-top:15px;
+  margin-bottom:40px;
+
+}

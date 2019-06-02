@@ -19,7 +19,8 @@
     "pages/orderReceive/orderReceive",
     "pages/restaurantCenter/restaurantCenter",
     "pages/restaurantCenter/restaurantSetting/restaurantSetting",
-    "pages/orderCustomer/orderCustomer"
+    "pages/orderCustomer/orderCustomer",
+    "pages/pay/pay"
   ],
   "window": {
     "backgroundTextStyle": "light",

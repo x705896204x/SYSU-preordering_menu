@@ -87,15 +87,9 @@ Page({
         // 至少选中一个商品才能支付
         if (that.data.orderCount.num !== 0){
           if (res.confirm) {
-            // 打开扫码功能
-            wx.scanCode({
-              onlyFromCamera: true,
-              success: (res) => {
-                wx.navigateTo({
-                  url: '../pay/pay'
-                });
-              }
-            });
+            wx.navigateTo({
+              url: '../pay/pay',
+            })
           } else if (res.cancel) {
             console.log('用户点击取消')
           }
