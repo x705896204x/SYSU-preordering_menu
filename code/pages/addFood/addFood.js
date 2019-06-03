@@ -4,6 +4,7 @@ Page({
       hasImage: 0,
       name: "",
       describe: "",
+      countNum: 0,
       price: 0,
       food: {
         title: "",
@@ -12,9 +13,17 @@ Page({
         describe: "",
         imageUrl: ""
       }
-    },  
+    }, 
+    
     onLoad: function () {
-
+        const db = wx.cloud.database()
+        var that = this
+        db.collection('MenuItem').get({
+            success: function(res) {
+                var num = res.data.length+1
+                that.setData({countNum:num});  //为什么必须把this换成that，直接调用this就不行?
+            }
+        })
     },  
 
     chooseImage: function () {
@@ -53,21 +62,45 @@ Page({
 
     addImageSuccess: function() {
         var model = {
-            title: "",
-            price: 0,
+            MenuItemName: "",
+            Price: 0,
             active: false,
-            describe: "",
-            imageUrl: ""
+            ItemDescription: "",
+            ImageUrl: "",
+            countNum: 0
         }
-        model.title = this.data.name
-        model.price = this.data.price
-        model.describe = this.data.describe
-        model.imageUrl = this.data.tempFilePaths
+        model.MenuItemName = this.data.name
+        model.Price = this.data.price
+        model.ItemDescription = this.data.describe
+        model.ImageUrl = this.data.tempFilePaths
 
         this.setData({
             food: model,
         })
         var addFood = JSON.stringify(this.data.food)
+
+        //添加数据
+        const db = wx.cloud.database()
+        console.log(this.data.countNum)
+        model.countNum = this.data.countNum
+        db.collection('MenuItem').add({
+
+            data: {
+                ItemDescription: model.ItemDescription,
+                MenuItemName: model.MenuItemName,
+                Price: model.Price,
+                id: model.countNum,
+                RestaurantId: 1,
+                Photo: model.ImageUrl,
+                Class: "hh"
+            },
+            success: function(res) {
+                console.log(res)
+            },
+            fail: console.error
+
+        })
+
         console.log(addFood)
 
         wx.navigateTo({
