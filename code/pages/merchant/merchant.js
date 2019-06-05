@@ -1,5 +1,12 @@
+var app = getApp()
+
 Page({
   data: {
+    temp: [{
+
+    }],
+    _id: "",
+    idNum: 0,
     // 商品列表
     items: [{
       id: 0,
@@ -13,22 +20,28 @@ Page({
   onLoad: function () {
     const db = wx.cloud.database()
     var menu = []
-    var that=this;
+    var that = this;
+
+    db.collection('MenuItem').where({
+      id: app.globalData.id
+    }).get({
+      success: function (res) {
+        that.setData({ _id: res.data[0]._id });
+      }
+    })
+
     db.collection('MenuItem').get({
-      success: function(res) {
+      success: function (res) {
+        console.log(res.data.length)
         // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
-        for (var i=0;i<res.data.length;i++) {
-          
+        for (var i = 0; i < res.data.length; i++) {
           menu.push(res.data[i])
         }
-
-        console.log("111")
-        //console.log(res.data)
-        that.setData({items:menu});  //为什么必须把this换成that，直接调用this就不行?
-    
+        that.setData({ items: menu });  //为什么必须把this换成that，直接调用this就不行?
         console.log(that.data.items)
       }
     })
+
     /*
     db.collection('MenuItem').add({
       data: {
@@ -64,55 +77,50 @@ Page({
     })
     console.log(this.data.items.length)
     console.log(this.data.items)*/
-
   },
 
-  deleteFood: function(e) {
-    var index = e.currentTarget.dataset.index
-    var items = this.data.items
-    //根据云开发数据库系统自带的_id进行静态！！！！删除
-    /*
-    const db = wx.cloud.database()
-    db.collection('MenuItem').doc('6cd397ca5cf39c150a6745e63ce1b267').remove({
-      success: function(res) {
-        console.log(res.data)
-      }
-    })*/
-  
-    //真正的动态删除，根据自定义的id字段删除，不过需要系统有nodejs环境的支持!!!!!
-    const cloud = require('wx-server-sdk')
-    cloud.init()
-    const db = cloud.database()
-    const _ = db.command
+  onReady: function () {
+  },
 
-    exports.main = async (event, context) => {
-  
-      try {    
-        return await db.collection('MenuItem').where(      
-          {
-            id: index+1
+
+  deleteFood: function (e) {
+    var index = e.currentTarget.dataset.index  //类型问题，为什么wxml那里改成data-index就好了
+    var items = this.data.items
+
+    app.globalData.id = index + 1
+
+    console.log(app.globalData.id)
+    var that = this;
+
+    const db = wx.cloud.database()
+
+    db.collection('MenuItem').where({
+      id: app.globalData.id
+    }).get({
+      success: function (res) {
+        db.collection('MenuItem').doc(res.data[0]._id).remove({
+          success: function (res) {
+            console.log(res.data)
           }
-        ).remove()
+        })
       }
-      catch (e) {
-        console.error(e)
-      }
-    }
+    })
+
     items.splice(index, 1)
     this.setData({
       items: items,
     })
     console.log(this.data.items)
     wx.showToast({
-      title: '删除成功',
+      title: '正在删除中',
       icon: 'success',
-      duration: 2000,
+      duration: 5000,
     })
-    var that = this
-    that.onLoad()
+
   },
 
-  addFood: function(e) {
+
+  addFood: function (e) {
     wx.navigateTo({
       url: "../addFood/addFood"
     })

@@ -5,7 +5,7 @@
       <image  src="../../images/index/dapanji.jpeg"></image>
       <text class="title">{{item.MenuItemName}}</text>
       <text class="price">￥ {{item.Price}} 元</text>
-      <button class="del" bindtap="deleteFood">删除该菜品</button>
+      <button class="del" data-index="{{index}}" bindtap="deleteFood">删除该菜品</button>
     </view>
   </view>
 </view>
